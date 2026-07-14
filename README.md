@@ -1,8 +1,9 @@
-# WSS — Eclipse de Sistemas
+# WSS — Systems & Solutions
 
 Landing estática moderna para presentar y vender sistemas de información.
 
 **Autor:** Julio A. Leiva — Ingeniero en Sistemas de Información y Abogado  
+**Sitio web:** [https://julioaleiva.github.io/wss-principal/](https://julioaleiva.github.io/wss-principal/)  
 **Contacto:** [wssarg@gmail.com](mailto:wssarg@gmail.com)  
 **GitHub:** [julioaleiva](https://github.com/julioaleiva)
 
