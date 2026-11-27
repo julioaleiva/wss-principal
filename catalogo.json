@@ -1,0 +1,971 @@
+{
+  "categories": {
+    "finanzas": {
+      "es": "Finanzas y crédito",
+      "en": "Finance and credit"
+    },
+    "banca": {
+      "es": "Banca",
+      "en": "Banking"
+    },
+    "salud": {
+      "es": "Salud",
+      "en": "Health care"
+    },
+    "comercio": {
+      "es": "Comercio y comunidad",
+      "en": "Commerce and community"
+    },
+    "productividad": {
+      "es": "Productividad",
+      "en": "Productivity"
+    },
+    "pericias": {
+      "es": "Sistemas de apoyo a pericias informáticas",
+      "en": "Digital forensics support"
+    },
+    "inmobiliaria": {
+      "es": "Inmobiliaria",
+      "en": "Real estate"
+    },
+    "industria": {
+      "es": "Industria y agro",
+      "en": "Industry and agriculture"
+    },
+    "musica": {
+      "es": "Música",
+      "en": "Music"
+    },
+    "estadisticas": {
+      "es": "Estadísticas",
+      "en": "Statistics"
+    }
+  },
+  "systems": [
+    {
+      "id": "consulta-deudas",
+      "category": "finanzas",
+      "name": {
+        "es": "Consulta de deudas",
+        "en": "Debt inquiry"
+      },
+      "description": {
+        "es": "Centralizá la consulta de deudas por CUIT, CUIL o DNI y visualizá el detalle por entidad. Facilita el análisis financiero con datos de BCRA o Nosis, según las fuentes y permisos disponibles.",
+        "en": "Centralize debt inquiries by CUIT, CUIL or DNI and view the details by institution. Support financial analysis with BCRA or Nosis data, subject to available sources and permissions."
+      },
+      "tags": {
+        "es": [
+          "Deudas",
+          "Entidades"
+        ],
+        "en": [
+          "Debt",
+          "Institutions"
+        ]
+      },
+      "icon": "🔎",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "billetera",
+      "category": "finanzas",
+      "name": {
+        "es": "Billetera virtual",
+        "en": "Digital wallet"
+      },
+      "description": {
+        "es": "Una propuesta de billetera para consultar saldos, movimientos y transferencias desde un mismo lugar. Pensada para simplificar la experiencia de pagos de usuarios y comercios.",
+        "en": "A wallet concept to view balances, transactions and transfers in one place. Designed to simplify payments for users and businesses."
+      },
+      "tags": {
+        "es": [
+          "Pagos",
+          "Movimientos"
+        ],
+        "en": [
+          "Payments",
+          "Transactions"
+        ]
+      },
+      "icon": "👛",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "ganancias",
+      "category": "finanzas",
+      "name": {
+        "es": "Sistema de control del Impuesto a las Ganancias",
+        "en": "Income tax management system"
+      },
+      "description": {
+        "es": "Organizá ingresos, deducciones y cálculos estimados del Impuesto a las Ganancias en un tablero claro. Ayuda a seguir la información del período y preparar reportes para su revisión profesional.",
+        "en": "Organize income, deductions and estimated income tax calculations in a clear dashboard. Track each tax period and prepare reports for professional review."
+      },
+      "tags": {
+        "es": [
+          "Impuestos",
+          "Reportes"
+        ],
+        "en": [
+          "Taxes",
+          "Reports"
+        ]
+      },
+      "icon": "🧾",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "intermediacion-prestamos",
+      "category": "finanzas",
+      "name": {
+        "es": "Red de préstamos entre personas",
+        "en": "Peer lending network"
+      },
+      "description": {
+        "es": "Conectá a personas que buscan financiamiento con posibles prestamistas mediante perfiles, solicitudes y seguimiento de propuestas. Un espacio para ordenar el proceso de intermediación.",
+        "en": "Connect people seeking financing with potential lenders through profiles, applications and proposal tracking. A structured space for the matchmaking process."
+      },
+      "tags": {
+        "es": [
+          "Intermediación",
+          "Crédito"
+        ],
+        "en": [
+          "Matchmaking",
+          "Credit"
+        ]
+      },
+      "icon": "🤝",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "margenes-tarjetas",
+      "category": "finanzas",
+      "name": {
+        "es": "Márgenes de tarjetas de crédito",
+        "en": "Credit card available limits"
+      },
+      "description": {
+        "es": "Consultá en un solo panel los límites y márgenes disponibles de distintas tarjetas. La solución se adapta a integraciones autorizadas con cada entidad emisora.",
+        "en": "View available limits across multiple credit cards in a single dashboard. The solution depends on authorized integrations with each card issuer."
+      },
+      "tags": {
+        "es": [
+          "Tarjetas",
+          "Consulta"
+        ],
+        "en": [
+          "Cards",
+          "Inquiry"
+        ]
+      },
+      "icon": "📊",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "cobranzas",
+      "category": "finanzas",
+      "name": {
+        "es": "Sistema de cobranzas",
+        "en": "Collections management system"
+      },
+      "description": {
+        "es": "Administrá cuentas por cobrar, vencimientos y pagos recibidos. El seguimiento de saldos y alertas ayuda a priorizar gestiones y tener una visión actualizada de la cartera.",
+        "en": "Manage receivables, due dates and payments. Balance tracking and alerts help prioritize collection work and keep your portfolio up to date."
+      },
+      "tags": {
+        "es": [
+          "Cobranzas",
+          "Vencimientos"
+        ],
+        "en": [
+          "Collections",
+          "Due dates"
+        ]
+      },
+      "icon": "💰",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "sistema-bancario",
+      "category": "banca",
+      "name": {
+        "es": "Sistema bancario",
+        "en": "Banking system"
+      },
+      "description": {
+        "es": "Plataforma modular para gestionar clientes, cuentas, movimientos y operaciones bancarias. Permite definir roles, trazabilidad y reportes de acuerdo con los procesos de cada institución.",
+        "en": "A modular platform for customers, accounts, transactions and banking operations. Configure roles, audit trails and reports around each institution's processes."
+      },
+      "tags": {
+        "es": [
+          "Cuentas",
+          "Operaciones"
+        ],
+        "en": [
+          "Accounts",
+          "Operations"
+        ]
+      },
+      "icon": "🏛️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "host-to-host",
+      "category": "banca",
+      "name": {
+        "es": "Sistema Host to Host para banca electrónica",
+        "en": "Host to Host electronic banking system"
+      },
+      "description": {
+        "es": "Automatizá el intercambio de archivos y la conciliación de pagos y cobranzas con bancos que operan con Red LINK o Banelco. La implementación depende de las interfaces y acuerdos disponibles con cada entidad.",
+        "en": "Automate file exchange and reconciliation of payments and collections with banks using Red LINK or Banelco. Implementation depends on the interfaces and agreements available with each institution."
+      },
+      "tags": {
+        "es": [
+          "Red LINK",
+          "Banelco"
+        ],
+        "en": [
+          "Red LINK",
+          "Banelco"
+        ]
+      },
+      "icon": "🏦",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "prestamos",
+      "category": "banca",
+      "name": {
+        "es": "Sistema de préstamos",
+        "en": "Loan management system"
+      },
+      "description": {
+        "es": "Gestioná solicitudes, aprobación, cuotas y pagos en un flujo único. Un tablero de seguimiento facilita el control de cada préstamo y la atención al cliente.",
+        "en": "Manage applications, approvals, installments and payments in one workflow. A tracking dashboard helps monitor every loan and serve customers."
+      },
+      "tags": {
+        "es": [
+          "Préstamos",
+          "Cuotas"
+        ],
+        "en": [
+          "Loans",
+          "Installments"
+        ]
+      },
+      "icon": "💳",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "turnos-medicos",
+      "category": "salud",
+      "name": {
+        "es": "Sistema de turnos médicos",
+        "en": "Medical appointment system"
+      },
+      "description": {
+        "es": "Organizá agendas de profesionales, disponibilidad y reservas desde la web. Los recordatorios y el seguimiento de turnos ayudan a mejorar la atención y reducir tareas administrativas.",
+        "en": "Manage professionals' schedules, availability and bookings online. Reminders and appointment tracking help improve patient service and reduce administrative work."
+      },
+      "tags": {
+        "es": [
+          "Agenda",
+          "Pacientes"
+        ],
+        "en": [
+          "Scheduling",
+          "Patients"
+        ]
+      },
+      "icon": "📅",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "historias-clinicas",
+      "category": "salud",
+      "name": {
+        "es": "Sistema de historias clínicas",
+        "en": "Electronic health records system"
+      },
+      "description": {
+        "es": "Reuní antecedentes, consultas y evolución de pacientes en un registro ordenado. Los accesos por rol y la trazabilidad facilitan el trabajo clínico con información sensible.",
+        "en": "Keep patient history, consultations and progress in an organized record. Role-based access and audit trails support clinical work with sensitive information."
+      },
+      "tags": {
+        "es": [
+          "Pacientes",
+          "Registros"
+        ],
+        "en": [
+          "Patients",
+          "Records"
+        ]
+      },
+      "icon": "🩺",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "laboratorio",
+      "category": "salud",
+      "name": {
+        "es": "Sistema de laboratorio",
+        "en": "Laboratory management system"
+      },
+      "description": {
+        "es": "Seguí cada estudio desde la orden y la muestra hasta el resultado y el informe. Ayuda a coordinar tareas, reducir demoras y localizar la información de cada paciente.",
+        "en": "Track every test from order and sample through results and reports. Coordinate tasks, reduce delays and find patient information more easily."
+      },
+      "tags": {
+        "es": [
+          "Muestras",
+          "Resultados"
+        ],
+        "en": [
+          "Samples",
+          "Results"
+        ]
+      },
+      "icon": "🧪",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "obra-social-zenda",
+      "category": "salud",
+      "name": {
+        "es": "Sistema de gestión de obra social",
+        "en": "Health insurance management system"
+      },
+      "description": {
+        "es": "Administrá afiliados, prestaciones, autorizaciones y consultas en una plataforma central. Adaptá los flujos de cobertura y atención a los procesos de cada obra social.",
+        "en": "Manage members, benefits, authorizations and inquiries in one platform. Tailor coverage and service workflows to each health insurance provider."
+      },
+      "tags": {
+        "es": [
+          "Afiliados",
+          "Prestaciones"
+        ],
+        "en": [
+          "Members",
+          "Benefits"
+        ]
+      },
+      "icon": "🏥",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "trueque",
+      "category": "comercio",
+      "name": {
+        "es": "Plataforma de trueque (Telocambio)",
+        "en": "Barter platform (Telocambio)"
+      },
+      "description": {
+        "es": "Publicá bienes o servicios y encontrá personas interesadas en intercambiarlos. Telocambio es un nombre tentativo para una comunidad con búsquedas, propuestas y acuerdos entre usuarios.",
+        "en": "List goods or services and find people interested in exchanging them. Telocambio is a tentative name for a community with search, proposals and user agreements."
+      },
+      "tags": {
+        "es": [
+          "Trueque",
+          "Comunidad"
+        ],
+        "en": [
+          "Barter",
+          "Community"
+        ]
+      },
+      "icon": "🔄",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "donaciones",
+      "category": "comercio",
+      "name": {
+        "es": "Plataforma de donaciones (Daresdar)",
+        "en": "Donation platform (Daresdar)"
+      },
+      "description": {
+        "es": "Creá campañas solidarias, explicá sus objetivos y recibí aportes en un mismo espacio. Daresdar es un nombre tentativo para dar visibilidad al progreso de cada causa.",
+        "en": "Create fundraising campaigns, explain their goals and receive contributions in one place. Daresdar is a tentative name for making each cause's progress visible."
+      },
+      "tags": {
+        "es": [
+          "Donaciones",
+          "Campañas"
+        ],
+        "en": [
+          "Donations",
+          "Campaigns"
+        ]
+      },
+      "icon": "💚",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "alquiler-objetos",
+      "category": "comercio",
+      "name": {
+        "es": "Alquiler de objetos (Telopresto)",
+        "en": "Object rental marketplace (Telopresto)"
+      },
+      "description": {
+        "es": "Publicá objetos disponibles para alquilar y conectá a propietarios con personas que los necesitan por un tiempo. Telopresto es un nombre tentativo para un mercado de alquiler entre usuarios.",
+        "en": "List objects available to rent and connect owners with people who need them temporarily. Telopresto is a tentative name for a peer-to-peer rental marketplace."
+      },
+      "tags": {
+        "es": [
+          "Alquiler",
+          "Objetos"
+        ],
+        "en": [
+          "Rentals",
+          "Objects"
+        ]
+      },
+      "icon": "📦",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "buloneria",
+      "category": "comercio",
+      "name": {
+        "es": "Sistema de gestión de bulonería",
+        "en": "Fastener store management system"
+      },
+      "description": {
+        "es": "Controlá artículos, medidas, stock, precios y ventas desde un mismo sistema. Facilita encontrar productos y mantener actualizado el inventario de una bulonería.",
+        "en": "Manage items, sizes, stock, prices and sales in one system. Find products quickly and keep a fastener store's inventory current."
+      },
+      "tags": {
+        "es": [
+          "Inventario",
+          "Ventas"
+        ],
+        "en": [
+          "Inventory",
+          "Sales"
+        ]
+      },
+      "icon": "🔩",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "repuestos",
+      "category": "comercio",
+      "name": {
+        "es": "Sistema de gestión de local de repuestos",
+        "en": "Spare parts store management system"
+      },
+      "description": {
+        "es": "Organizá el catálogo de repuestos, compatibilidades, proveedores, existencias y ventas. Un buscador ágil ayuda a identificar la pieza correcta y responder más rápido al cliente.",
+        "en": "Organize spare parts, compatibility data, suppliers, inventory and sales. Fast search helps staff find the right part and respond to customers sooner."
+      },
+      "tags": {
+        "es": [
+          "Repuestos",
+          "Inventario"
+        ],
+        "en": [
+          "Spare parts",
+          "Inventory"
+        ]
+      },
+      "icon": "🛠️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "productos",
+      "category": "comercio",
+      "name": {
+        "es": "Sistema de gestión de productos (compra y venta)",
+        "en": "Product purchasing and sales system"
+      },
+      "description": {
+        "es": "Gestioná compras, proveedores, precios, inventario y ventas en un flujo integrado. Los reportes muestran movimientos y márgenes para apoyar decisiones comerciales.",
+        "en": "Manage purchases, suppliers, prices, inventory and sales in one workflow. Reports show transactions and margins to support commercial decisions."
+      },
+      "tags": {
+        "es": [
+          "Compras",
+          "Ventas"
+        ],
+        "en": [
+          "Purchases",
+          "Sales"
+        ]
+      },
+      "icon": "🛒",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "firma-digital",
+      "category": "productividad",
+      "name": {
+        "es": "Herramienta de firma digital",
+        "en": "Digital signature tool"
+      },
+      "description": {
+        "es": "Prepará documentos, definí firmantes y seguí el estado de cada firma. Puede incorporar mecanismos de firma y verificación acordes al marco normativo aplicable.",
+        "en": "Prepare documents, assign signers and track each signature. The solution can include signing and verification methods suited to applicable regulations."
+      },
+      "tags": {
+        "es": [
+          "Documentos",
+          "Firma"
+        ],
+        "en": [
+          "Documents",
+          "Signature"
+        ]
+      },
+      "icon": "✍️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "visio",
+      "category": "productividad",
+      "name": {
+        "es": "Editor de diagramas",
+        "en": "Diagram editor"
+      },
+      "description": {
+        "es": "Dibujá procesos, flujos y esquemas visuales desde el navegador. Una herramienta para documentar ideas y compartir diagramas claros con equipos y clientes.",
+        "en": "Draw processes, flows and visual diagrams in the browser. Document ideas and share clear diagrams with teams and clients."
+      },
+      "tags": {
+        "es": [
+          "Diagramas",
+          "Procesos"
+        ],
+        "en": [
+          "Diagrams",
+          "Processes"
+        ]
+      },
+      "icon": "🧩",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "visor-md",
+      "category": "productividad",
+      "name": {
+        "es": "Visor Markdown con Mermaid",
+        "en": "Markdown viewer with Mermaid"
+      },
+      "description": {
+        "es": "Abrí archivos Markdown y visualizá su formato junto con diagramas Mermaid. Simplifica la lectura de documentación técnica sin configurar herramientas adicionales.",
+        "en": "Open Markdown files and render their formatting and Mermaid diagrams. Read technical documentation without setting up extra tools."
+      },
+      "tags": {
+        "es": [
+          "Markdown",
+          "Mermaid"
+        ],
+        "en": [
+          "Markdown",
+          "Mermaid"
+        ]
+      },
+      "icon": "📄",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "visor-sql",
+      "category": "productividad",
+      "name": {
+        "es": "Visor SQL",
+        "en": "SQL file viewer"
+      },
+      "description": {
+        "es": "Explorá archivos SQL con una vista legible para revisar consultas, tablas y scripts. Facilita navegar documentación y compartir fragmentos de código de base de datos.",
+        "en": "Explore SQL files in a readable interface for queries, tables and scripts. Navigate database documentation and share code snippets more easily."
+      },
+      "tags": {
+        "es": [
+          "SQL",
+          "Archivos"
+        ],
+        "en": [
+          "SQL",
+          "Files"
+        ]
+      },
+      "icon": "🗃️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "graba-pantalla",
+      "category": "productividad",
+      "name": {
+        "es": "Grabador de sector de pantalla",
+        "en": "Screen area recorder"
+      },
+      "description": {
+        "es": "Elegí un área de la pantalla y grabá una demostración, tutorial o incidencia. Ayuda a explicar procesos y compartir evidencia visual con menos pasos.",
+        "en": "Select part of your screen to record a demo, tutorial or issue. Explain processes and share visual evidence with fewer steps."
+      },
+      "tags": {
+        "es": [
+          "Grabación",
+          "Pantalla"
+        ],
+        "en": [
+          "Recording",
+          "Screen"
+        ]
+      },
+      "icon": "🎥",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "metadatos-imagen",
+      "category": "pericias",
+      "name": {
+        "es": "Análisis de metadatos de imágenes",
+        "en": "Image metadata analysis"
+      },
+      "description": {
+        "es": "Examiná los metadatos disponibles en una imagen, como fechas, dispositivo o ubicación cuando existan. Un apoyo para organizar indicios en una pericia informática.",
+        "en": "Examine available image metadata, such as dates, device or location when present. A tool to organize clues in a digital forensic examination."
+      },
+      "tags": {
+        "es": [
+          "Imágenes",
+          "Metadatos"
+        ],
+        "en": [
+          "Images",
+          "Metadata"
+        ]
+      },
+      "icon": "🖼️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "deteccion-ia",
+      "category": "pericias",
+      "name": {
+        "es": "Análisis de imágenes generadas con IA",
+        "en": "AI-generated image analysis"
+      },
+      "description": {
+        "es": "Evaluá indicios de generación o edición mediante IA en una imagen. El resultado se presenta como estimación para apoyar una revisión humana, no como prueba concluyente.",
+        "en": "Assess signs that an image may have been generated or edited with AI. Results are estimates to support human review, not conclusive evidence."
+      },
+      "tags": {
+        "es": [
+          "Imágenes",
+          "IA"
+        ],
+        "en": [
+          "Images",
+          "IA"
+        ]
+      },
+      "icon": "🤖",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "buscador-apps",
+      "category": "pericias",
+      "name": {
+        "es": "Buscador de apps en GitHub",
+        "en": "GitHub app finder"
+      },
+      "description": {
+        "es": "Encontrá aplicaciones y repositorios públicos de GitHub por tema o tecnología. Agilizá la búsqueda de herramientas que puedan servir para investigación y análisis técnico.",
+        "en": "Find public GitHub applications and repositories by topic or technology. Speed up the search for tools useful in research and technical analysis."
+      },
+      "tags": {
+        "es": [
+          "GitHub",
+          "Herramientas"
+        ],
+        "en": [
+          "GitHub",
+          "Tools"
+        ]
+      },
+      "icon": "🔍",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "buscador-skills",
+      "category": "pericias",
+      "name": {
+        "es": "Buscador de Skills de IA",
+        "en": "AI skills finder"
+      },
+      "description": {
+        "es": "Explorá skills de IA publicadas en GitHub y compará sus descripciones y usos. Ayuda a descubrir recursos para automatizar tareas de análisis e investigación.",
+        "en": "Explore AI skills published on GitHub and compare their descriptions and uses. Discover resources to automate analysis and research tasks."
+      },
+      "tags": {
+        "es": [
+          "GitHub",
+          "Skills"
+        ],
+        "en": [
+          "GitHub",
+          "Skills"
+        ]
+      },
+      "icon": "🧠",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "transcripcion",
+      "category": "pericias",
+      "name": {
+        "es": "Conversión de audio a texto",
+        "en": "Audio transcription"
+      },
+      "description": {
+        "es": "Transcribí grabaciones para buscar, revisar y citar fragmentos con mayor facilidad. Una herramienta de apoyo para documentación y análisis de material sonoro.",
+        "en": "Transcribe recordings to search, review and cite segments more easily. A support tool for documenting and analyzing audio material."
+      },
+      "tags": {
+        "es": [
+          "Audio",
+          "Transcripción"
+        ],
+        "en": [
+          "Audio",
+          "Transcription"
+        ]
+      },
+      "icon": "🎙️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "inmobiliaria",
+      "category": "inmobiliaria",
+      "name": {
+        "es": "Sistema de gestión de inmobiliaria",
+        "en": "Real estate management system"
+      },
+      "description": {
+        "es": "Reuní propiedades, clientes, consultas, visitas y operaciones en un mismo lugar. El seguimiento comercial ayuda a responder oportunidades y mantener ordenada la cartera.",
+        "en": "Keep properties, clients, inquiries, viewings and transactions in one place. Sales tracking helps respond to opportunities and organize listings."
+      },
+      "tags": {
+        "es": [
+          "Propiedades",
+          "Clientes"
+        ],
+        "en": [
+          "Properties",
+          "Clients"
+        ]
+      },
+      "icon": "🏠",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "ingenio",
+      "category": "industria",
+      "name": {
+        "es": "Sistema de gestión de ingenio azucarero",
+        "en": "Sugar mill management system"
+      },
+      "description": {
+        "es": "Seguí procesos, insumos, producción y reportes de un ingenio azucarero. La información centralizada ayuda a coordinar áreas y controlar indicadores operativos.",
+        "en": "Track processes, supplies, production and reports for a sugar mill. Centralized information helps coordinate teams and monitor operating indicators."
+      },
+      "tags": {
+        "es": [
+          "Ingenio",
+          "Producción"
+        ],
+        "en": [
+          "Sugar mill",
+          "Production"
+        ]
+      },
+      "icon": "🏭",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "agro",
+      "category": "industria",
+      "name": {
+        "es": "Sistema de gestión de industria agro",
+        "en": "Agribusiness management system"
+      },
+      "description": {
+        "es": "Organizá actividades de campo, insumos, lotes y producción agroindustrial. Un tablero de seguimiento permite ver avances y planificar recursos.",
+        "en": "Organize field work, supplies, plots and agribusiness production. A tracking dashboard shows progress and helps plan resources."
+      },
+      "tags": {
+        "es": [
+          "Agro",
+          "Lotes"
+        ],
+        "en": [
+          "Agriculture",
+          "Plots"
+        ]
+      },
+      "icon": "🌾",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "ganaderia",
+      "category": "industria",
+      "name": {
+        "es": "Sistema de gestión de industria ganadera",
+        "en": "Livestock industry management system"
+      },
+      "description": {
+        "es": "Registrá animales, movimientos, sanidad y producción ganadera en una plataforma. Facilita consultar el historial del rodeo y planificar tareas del establecimiento.",
+        "en": "Record animals, movements, health and livestock production in one platform. Review herd history and plan farm tasks more easily."
+      },
+      "tags": {
+        "es": [
+          "Ganadería",
+          "Rodeo"
+        ],
+        "en": [
+          "Livestock",
+          "Herd"
+        ]
+      },
+      "icon": "🐄",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "petroleo",
+      "category": "industria",
+      "name": {
+        "es": "Sistema de gestión de industria petrolífera",
+        "en": "Oil industry management system"
+      },
+      "description": {
+        "es": "Centralizá operaciones, equipos, recursos y reportes del sector petrolero. El seguimiento de actividades mejora la coordinación y la trazabilidad de la información.",
+        "en": "Centralize operations, equipment, resources and reports for the oil sector. Activity tracking improves coordination and information traceability."
+      },
+      "tags": {
+        "es": [
+          "Petróleo",
+          "Operaciones"
+        ],
+        "en": [
+          "Oil",
+          "Operations"
+        ]
+      },
+      "icon": "🛢️",
+      "status": "idea",
+      "url": null
+    },
+    {
+      "id": "letras",
+      "category": "musica",
+      "name": {
+        "es": "Letras de canciones",
+        "en": "Song lyrics"
+      },
+      "description": {
+        "es": "Buscá y consultá letras de canciones en una interfaz simple, pensada para encontrar rápidamente lo que querés cantar o leer. Abrí el sitio LetrasYa para explorar la herramienta.",
+        "en": "Search and read song lyrics in a simple interface built to find what you want to sing or read. Open LetrasYa to explore the site."
+      },
+      "tags": {
+        "es": [
+          "Letras",
+          "Canciones"
+        ],
+        "en": [
+          "Lyrics",
+          "Songs"
+        ]
+      },
+      "icon": "🎵",
+      "status": "live",
+      "url": "https://letraya.netlify.app/"
+    },
+    {
+      "id": "acordes",
+      "category": "musica",
+      "name": {
+        "es": "Acordes de canciones",
+        "en": "Song chords"
+      },
+      "description": {
+        "es": "Encontrá acordes de canciones para practicar y tocar. Abrí AcordesYa y explorá la herramienta desde cualquier dispositivo.",
+        "en": "Find song chords for practice and performance. Open AcordesYa and explore the tool on any device."
+      },
+      "tags": {
+        "es": [
+          "Acordes",
+          "Canciones"
+        ],
+        "en": [
+          "Chords",
+          "Songs"
+        ]
+      },
+      "icon": "🎸",
+      "status": "live",
+      "url": "https://acordesya.vercel.app/"
+    },
+    {
+      "id": "votoya",
+      "category": "estadisticas",
+      "name": {
+        "es": "Sistema de votación en línea (Votoya)",
+        "en": "Online voting system (Votoya)"
+      },
+      "description": {
+        "es": "Creá una cuenta, organizá elecciones, emití votos y consultá resultados desde una plataforma digital. Votoya es un nombre tentativo; la verificación con biometría facial y datos de RENAPER requeriría integraciones autorizadas y controles de privacidad.",
+        "en": "Create an account, organize elections, cast votes and view results in a digital platform. Votoya is a tentative name; facial biometric and RENAPER identity checks would require authorized integrations and privacy safeguards."
+      },
+      "tags": {
+        "es": [
+          "Votación",
+          "Resultados"
+        ],
+        "en": [
+          "Voting",
+          "Results"
+        ]
+      },
+      "icon": "🗳️",
+      "status": "idea",
+      "url": null
+    }
+  ]
+}

@@ -2,8 +2,22 @@
 
 Sitio público: https://wss-principal.netlify.app/
 
-La página completa está en `index.html`: HTML, CSS y JavaScript integrados.
+El catálogo se edita en **`catalogo.json`**. Para agregar, cambiar o quitar un sistema, modificá solo ese archivo y subí el cambio a la rama `master` de GitHub. Netlify ejecuta `node build.mjs` y publica `dist/index.html` automáticamente.
 
-El catálogo contiene 37 soluciones en 10 rubros. Los datos en español están en `SYSTEMS`, las traducciones de fichas en `EN_SYSTEMS` y los textos de interfaz en `EN_TEXT`. El idioma inicial es español. Las dos herramientas musicales enlazan a sus sitios; las demás fichas se presentan como propuestas.
+Cada ficha contiene:
 
-Netlify usa Netlify Drop: para publicar cambios, subir `index.html` al proyecto `wss-principal` después de actualizar GitHub.
+- `id`: identificador único, en minúsculas y con guiones.
+- `category`: clave de una categoría definida en `categories`.
+- `name` y `description`: textos `es` y `en`. La descripción debe explicar el beneficio y el alcance sin presentar una propuesta como producto terminado.
+- `tags`: listas `es` y `en`.
+- `icon`: emoji de la tarjeta.
+- `status`: `idea` o `live` (también se admiten `beta` y `soon`).
+- `url`: URL HTTPS del sistema publicado, o `null` para una propuesta. Si el estado es `live`, la URL es obligatoria.
+
+Para crear un rubro nuevo, agregá su clave y sus nombres `es` y `en` en `categories` del mismo JSON. El filtro y el formulario se actualizan en la compilación.
+
+`index.html` incluye una copia generada del catálogo para que el contenido sea visible a buscadores antes de ejecutar JavaScript. **No edites manualmente esa copia**: el generador la reemplaza desde `catalogo.json` en cada despliegue.
+
+## Verificación local
+
+Ejecutá `node build.mjs` y abrí `dist/index.html` en el navegador. No hacen falta paquetes adicionales. El formulario de contacto usa FormSubmit y, si falla, abre un correo de respaldo.

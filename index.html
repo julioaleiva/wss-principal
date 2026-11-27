@@ -1285,6 +1285,7 @@ strong { font-weight: 600; }
           <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
         </div>
 
+        <!-- catalog-cards:start -->
         <div class="systems__grid" id="systemsGrid" aria-live="polite">
           <article class="system-card is-idea" data-category="finanzas">
             <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🔎</div><span class="system-card__badge is-soon">Idea</span></div>
@@ -1509,7 +1510,7 @@ strong { font-weight: 600; }
             <div class="system-card__footer"><div class="system-card__tags"><span>Estadísticas</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
           </article>
         </div>
-
+<!-- catalog-cards:end -->
         <p class="systems__empty" id="systemsEmpty" hidden>
           No hay ideas en este rubro todavía.
         </p>
@@ -1632,6 +1633,7 @@ strong { font-weight: 600; }
           </div>
           <div class="field">
             <label for="rubro">Rubro de interés</label>
+            <!-- catalog-options:start -->
             <select id="rubro" name="rubro" required>
               <option value="" disabled selected>Seleccioná un rubro</option>
               <option value="Finanzas y crédito">Finanzas y crédito</option>
@@ -1646,6 +1648,7 @@ strong { font-weight: 600; }
               <option value="Estadísticas">Estadísticas</option>
               <option value="Otro / A medida">Otro / A medida</option>
             </select>
+<!-- catalog-options:end -->
           </div>
           <div class="field">
             <label for="message">Mensaje</label>
@@ -1684,46 +1687,57 @@ strong { font-weight: 600; }
   </button>
 
   <script>
+// catalog-data:start
 const CATEGORIES = {
   "finanzas": {
     "id": "finanzas",
-    "label": "Finanzas y crédito"
+    "label": "Finanzas y crédito",
+    "labelEn": "Finance and credit"
   },
   "banca": {
     "id": "banca",
-    "label": "Banca"
+    "label": "Banca",
+    "labelEn": "Banking"
   },
   "salud": {
     "id": "salud",
-    "label": "Salud"
+    "label": "Salud",
+    "labelEn": "Health care"
   },
   "comercio": {
     "id": "comercio",
-    "label": "Comercio y comunidad"
+    "label": "Comercio y comunidad",
+    "labelEn": "Commerce and community"
   },
   "productividad": {
     "id": "productividad",
-    "label": "Productividad"
+    "label": "Productividad",
+    "labelEn": "Productivity"
   },
   "pericias": {
     "id": "pericias",
-    "label": "Sistemas de apoyo a pericias informáticas"
+    "label": "Sistemas de apoyo a pericias informáticas",
+    "labelEn": "Digital forensics support"
   },
   "inmobiliaria": {
     "id": "inmobiliaria",
-    "label": "Inmobiliaria"
+    "label": "Inmobiliaria",
+    "labelEn": "Real estate"
   },
   "industria": {
     "id": "industria",
-    "label": "Industria y agro"
+    "label": "Industria y agro",
+    "labelEn": "Industry and agriculture"
   },
   "musica": {
     "id": "musica",
-    "label": "Música"
+    "label": "Música",
+    "labelEn": "Music"
   },
   "estadisticas": {
     "id": "estadisticas",
-    "label": "Estadísticas"
+    "label": "Estadísticas",
+    "labelEn": "Statistics"
   }
 };
 
@@ -2212,6 +2226,7 @@ const SYSTEMS = [
 ];
 
 window.WSS = { CATEGORIES, SYSTEMS };
+// catalog-data:end
 
 const EN_TEXT = {
   "Inicio": "Home",
@@ -2374,156 +2389,306 @@ const EN_TEXT = {
   "Abrir sitio": "Open site",
   "Filtrar por rubro": "Filter by industry"
 };
+// catalog-english:start
 const EN_SYSTEMS = {
   "consulta-deudas": {
     "name": "Debt inquiry",
-    "description": "Centralize debt inquiries by CUIT, CUIL or DNI and view the details by institution. Support financial analysis with BCRA or Nosis data, subject to available sources and permissions."
+    "description": "Centralize debt inquiries by CUIT, CUIL or DNI and view the details by institution. Support financial analysis with BCRA or Nosis data, subject to available sources and permissions.",
+    "tags": [
+      "Debt",
+      "Institutions"
+    ]
   },
   "billetera": {
     "name": "Digital wallet",
-    "description": "A wallet concept to view balances, transactions and transfers in one place. Designed to simplify payments for users and businesses."
+    "description": "A wallet concept to view balances, transactions and transfers in one place. Designed to simplify payments for users and businesses.",
+    "tags": [
+      "Payments",
+      "Transactions"
+    ]
   },
   "ganancias": {
     "name": "Income tax management system",
-    "description": "Organize income, deductions and estimated income tax calculations in a clear dashboard. Track each tax period and prepare reports for professional review."
+    "description": "Organize income, deductions and estimated income tax calculations in a clear dashboard. Track each tax period and prepare reports for professional review.",
+    "tags": [
+      "Taxes",
+      "Reports"
+    ]
   },
   "intermediacion-prestamos": {
     "name": "Peer lending network",
-    "description": "Connect people seeking financing with potential lenders through profiles, applications and proposal tracking. A structured space for the matchmaking process."
+    "description": "Connect people seeking financing with potential lenders through profiles, applications and proposal tracking. A structured space for the matchmaking process.",
+    "tags": [
+      "Matchmaking",
+      "Credit"
+    ]
   },
   "margenes-tarjetas": {
     "name": "Credit card available limits",
-    "description": "View available limits across multiple credit cards in a single dashboard. The solution depends on authorized integrations with each card issuer."
+    "description": "View available limits across multiple credit cards in a single dashboard. The solution depends on authorized integrations with each card issuer.",
+    "tags": [
+      "Cards",
+      "Inquiry"
+    ]
   },
   "cobranzas": {
     "name": "Collections management system",
-    "description": "Manage receivables, due dates and payments. Balance tracking and alerts help prioritize collection work and keep your portfolio up to date."
+    "description": "Manage receivables, due dates and payments. Balance tracking and alerts help prioritize collection work and keep your portfolio up to date.",
+    "tags": [
+      "Collections",
+      "Due dates"
+    ]
   },
   "sistema-bancario": {
     "name": "Banking system",
-    "description": "A modular platform for customers, accounts, transactions and banking operations. Configure roles, audit trails and reports around each institution's processes."
+    "description": "A modular platform for customers, accounts, transactions and banking operations. Configure roles, audit trails and reports around each institution's processes.",
+    "tags": [
+      "Accounts",
+      "Operations"
+    ]
   },
   "host-to-host": {
     "name": "Host to Host electronic banking system",
-    "description": "Automate file exchange and reconciliation of payments and collections with banks using Red LINK or Banelco. Implementation depends on the interfaces and agreements available with each institution."
+    "description": "Automate file exchange and reconciliation of payments and collections with banks using Red LINK or Banelco. Implementation depends on the interfaces and agreements available with each institution.",
+    "tags": [
+      "Red LINK",
+      "Banelco"
+    ]
   },
   "prestamos": {
     "name": "Loan management system",
-    "description": "Manage applications, approvals, installments and payments in one workflow. A tracking dashboard helps monitor every loan and serve customers."
+    "description": "Manage applications, approvals, installments and payments in one workflow. A tracking dashboard helps monitor every loan and serve customers.",
+    "tags": [
+      "Loans",
+      "Installments"
+    ]
   },
   "turnos-medicos": {
     "name": "Medical appointment system",
-    "description": "Manage professionals' schedules, availability and bookings online. Reminders and appointment tracking help improve patient service and reduce administrative work."
+    "description": "Manage professionals' schedules, availability and bookings online. Reminders and appointment tracking help improve patient service and reduce administrative work.",
+    "tags": [
+      "Scheduling",
+      "Patients"
+    ]
   },
   "historias-clinicas": {
     "name": "Electronic health records system",
-    "description": "Keep patient history, consultations and progress in an organized record. Role-based access and audit trails support clinical work with sensitive information."
+    "description": "Keep patient history, consultations and progress in an organized record. Role-based access and audit trails support clinical work with sensitive information.",
+    "tags": [
+      "Patients",
+      "Records"
+    ]
   },
   "laboratorio": {
     "name": "Laboratory management system",
-    "description": "Track every test from order and sample through results and reports. Coordinate tasks, reduce delays and find patient information more easily."
+    "description": "Track every test from order and sample through results and reports. Coordinate tasks, reduce delays and find patient information more easily.",
+    "tags": [
+      "Samples",
+      "Results"
+    ]
   },
   "obra-social-zenda": {
     "name": "Health insurance management system",
-    "description": "Manage members, benefits, authorizations and inquiries in one platform. Tailor coverage and service workflows to each health insurance provider."
+    "description": "Manage members, benefits, authorizations and inquiries in one platform. Tailor coverage and service workflows to each health insurance provider.",
+    "tags": [
+      "Members",
+      "Benefits"
+    ]
   },
   "trueque": {
     "name": "Barter platform (Telocambio)",
-    "description": "List goods or services and find people interested in exchanging them. Telocambio is a tentative name for a community with search, proposals and user agreements."
+    "description": "List goods or services and find people interested in exchanging them. Telocambio is a tentative name for a community with search, proposals and user agreements.",
+    "tags": [
+      "Barter",
+      "Community"
+    ]
   },
   "donaciones": {
     "name": "Donation platform (Daresdar)",
-    "description": "Create fundraising campaigns, explain their goals and receive contributions in one place. Daresdar is a tentative name for making each cause's progress visible."
+    "description": "Create fundraising campaigns, explain their goals and receive contributions in one place. Daresdar is a tentative name for making each cause's progress visible.",
+    "tags": [
+      "Donations",
+      "Campaigns"
+    ]
   },
   "alquiler-objetos": {
     "name": "Object rental marketplace (Telopresto)",
-    "description": "List objects available to rent and connect owners with people who need them temporarily. Telopresto is a tentative name for a peer-to-peer rental marketplace."
+    "description": "List objects available to rent and connect owners with people who need them temporarily. Telopresto is a tentative name for a peer-to-peer rental marketplace.",
+    "tags": [
+      "Rentals",
+      "Objects"
+    ]
   },
   "buloneria": {
     "name": "Fastener store management system",
-    "description": "Manage items, sizes, stock, prices and sales in one system. Find products quickly and keep a fastener store's inventory current."
+    "description": "Manage items, sizes, stock, prices and sales in one system. Find products quickly and keep a fastener store's inventory current.",
+    "tags": [
+      "Inventory",
+      "Sales"
+    ]
   },
   "repuestos": {
     "name": "Spare parts store management system",
-    "description": "Organize spare parts, compatibility data, suppliers, inventory and sales. Fast search helps staff find the right part and respond to customers sooner."
+    "description": "Organize spare parts, compatibility data, suppliers, inventory and sales. Fast search helps staff find the right part and respond to customers sooner.",
+    "tags": [
+      "Spare parts",
+      "Inventory"
+    ]
   },
   "productos": {
     "name": "Product purchasing and sales system",
-    "description": "Manage purchases, suppliers, prices, inventory and sales in one workflow. Reports show transactions and margins to support commercial decisions."
+    "description": "Manage purchases, suppliers, prices, inventory and sales in one workflow. Reports show transactions and margins to support commercial decisions.",
+    "tags": [
+      "Purchases",
+      "Sales"
+    ]
   },
   "firma-digital": {
     "name": "Digital signature tool",
-    "description": "Prepare documents, assign signers and track each signature. The solution can include signing and verification methods suited to applicable regulations."
+    "description": "Prepare documents, assign signers and track each signature. The solution can include signing and verification methods suited to applicable regulations.",
+    "tags": [
+      "Documents",
+      "Signature"
+    ]
   },
   "visio": {
     "name": "Diagram editor",
-    "description": "Draw processes, flows and visual diagrams in the browser. Document ideas and share clear diagrams with teams and clients."
+    "description": "Draw processes, flows and visual diagrams in the browser. Document ideas and share clear diagrams with teams and clients.",
+    "tags": [
+      "Diagrams",
+      "Processes"
+    ]
   },
   "visor-md": {
     "name": "Markdown viewer with Mermaid",
-    "description": "Open Markdown files and render their formatting and Mermaid diagrams. Read technical documentation without setting up extra tools."
+    "description": "Open Markdown files and render their formatting and Mermaid diagrams. Read technical documentation without setting up extra tools.",
+    "tags": [
+      "Markdown",
+      "Mermaid"
+    ]
   },
   "visor-sql": {
     "name": "SQL file viewer",
-    "description": "Explore SQL files in a readable interface for queries, tables and scripts. Navigate database documentation and share code snippets more easily."
+    "description": "Explore SQL files in a readable interface for queries, tables and scripts. Navigate database documentation and share code snippets more easily.",
+    "tags": [
+      "SQL",
+      "Files"
+    ]
   },
   "graba-pantalla": {
     "name": "Screen area recorder",
-    "description": "Select part of your screen to record a demo, tutorial or issue. Explain processes and share visual evidence with fewer steps."
+    "description": "Select part of your screen to record a demo, tutorial or issue. Explain processes and share visual evidence with fewer steps.",
+    "tags": [
+      "Recording",
+      "Screen"
+    ]
   },
   "metadatos-imagen": {
     "name": "Image metadata analysis",
-    "description": "Examine available image metadata, such as dates, device or location when present. A tool to organize clues in a digital forensic examination."
+    "description": "Examine available image metadata, such as dates, device or location when present. A tool to organize clues in a digital forensic examination.",
+    "tags": [
+      "Images",
+      "Metadata"
+    ]
   },
   "deteccion-ia": {
     "name": "AI-generated image analysis",
-    "description": "Assess signs that an image may have been generated or edited with AI. Results are estimates to support human review, not conclusive evidence."
+    "description": "Assess signs that an image may have been generated or edited with AI. Results are estimates to support human review, not conclusive evidence.",
+    "tags": [
+      "Images",
+      "IA"
+    ]
   },
   "buscador-apps": {
     "name": "GitHub app finder",
-    "description": "Find public GitHub applications and repositories by topic or technology. Speed up the search for tools useful in research and technical analysis."
+    "description": "Find public GitHub applications and repositories by topic or technology. Speed up the search for tools useful in research and technical analysis.",
+    "tags": [
+      "GitHub",
+      "Tools"
+    ]
   },
   "buscador-skills": {
     "name": "AI skills finder",
-    "description": "Explore AI skills published on GitHub and compare their descriptions and uses. Discover resources to automate analysis and research tasks."
+    "description": "Explore AI skills published on GitHub and compare their descriptions and uses. Discover resources to automate analysis and research tasks.",
+    "tags": [
+      "GitHub",
+      "Skills"
+    ]
   },
   "transcripcion": {
     "name": "Audio transcription",
-    "description": "Transcribe recordings to search, review and cite segments more easily. A support tool for documenting and analyzing audio material."
+    "description": "Transcribe recordings to search, review and cite segments more easily. A support tool for documenting and analyzing audio material.",
+    "tags": [
+      "Audio",
+      "Transcription"
+    ]
   },
   "inmobiliaria": {
     "name": "Real estate management system",
-    "description": "Keep properties, clients, inquiries, viewings and transactions in one place. Sales tracking helps respond to opportunities and organize listings."
+    "description": "Keep properties, clients, inquiries, viewings and transactions in one place. Sales tracking helps respond to opportunities and organize listings.",
+    "tags": [
+      "Properties",
+      "Clients"
+    ]
   },
   "ingenio": {
     "name": "Sugar mill management system",
-    "description": "Track processes, supplies, production and reports for a sugar mill. Centralized information helps coordinate teams and monitor operating indicators."
+    "description": "Track processes, supplies, production and reports for a sugar mill. Centralized information helps coordinate teams and monitor operating indicators.",
+    "tags": [
+      "Sugar mill",
+      "Production"
+    ]
   },
   "agro": {
     "name": "Agribusiness management system",
-    "description": "Organize field work, supplies, plots and agribusiness production. A tracking dashboard shows progress and helps plan resources."
+    "description": "Organize field work, supplies, plots and agribusiness production. A tracking dashboard shows progress and helps plan resources.",
+    "tags": [
+      "Agriculture",
+      "Plots"
+    ]
   },
   "ganaderia": {
     "name": "Livestock industry management system",
-    "description": "Record animals, movements, health and livestock production in one platform. Review herd history and plan farm tasks more easily."
+    "description": "Record animals, movements, health and livestock production in one platform. Review herd history and plan farm tasks more easily.",
+    "tags": [
+      "Livestock",
+      "Herd"
+    ]
   },
   "petroleo": {
     "name": "Oil industry management system",
-    "description": "Centralize operations, equipment, resources and reports for the oil sector. Activity tracking improves coordination and information traceability."
+    "description": "Centralize operations, equipment, resources and reports for the oil sector. Activity tracking improves coordination and information traceability.",
+    "tags": [
+      "Oil",
+      "Operations"
+    ]
   },
   "letras": {
     "name": "Song lyrics",
-    "description": "Search and read song lyrics in a simple interface built to find what you want to sing or read. Open LetrasYa to explore the site."
+    "description": "Search and read song lyrics in a simple interface built to find what you want to sing or read. Open LetrasYa to explore the site.",
+    "tags": [
+      "Lyrics",
+      "Songs"
+    ]
   },
   "acordes": {
     "name": "Song chords",
-    "description": "Find song chords for practice and performance. Open AcordesYa and explore the tool on any device."
+    "description": "Find song chords for practice and performance. Open AcordesYa and explore the tool on any device.",
+    "tags": [
+      "Chords",
+      "Songs"
+    ]
   },
   "votoya": {
     "name": "Online voting system (Votoya)",
-    "description": "Create an account, organize elections, cast votes and view results in a digital platform. Votoya is a tentative name; facial biometric and RENAPER identity checks would require authorized integrations and privacy safeguards."
+    "description": "Create an account, organize elections, cast votes and view results in a digital platform. Votoya is a tentative name; facial biometric and RENAPER identity checks would require authorized integrations and privacy safeguards.",
+    "tags": [
+      "Voting",
+      "Results"
+    ]
   }
 };
+// catalog-english:end
 
 (() => {
   "use strict";
@@ -2683,9 +2848,9 @@ const EN_SYSTEMS = {
     const isLive = Boolean(system.url) && system.status !== "soon";
     const badgeClass = isLive ? "is-live" : "is-soon";
     const badgeText = translate(statusLabel[system.status] || (isLive ? "En vivo" : "Próximamente"));
-    const tags = (system.tags || [])
+    const tags = (systemText(system, "tags") || [])
       .slice(0, 3)
-      .map((t) => `<span>${escapeHTML(translate(t))}</span>`)
+      .map((t) => `<span>${escapeHTML(t)}</span>`)
       .join("");
 
     const link = isLive
@@ -2705,7 +2870,7 @@ const EN_SYSTEMS = {
         <p>${escapeHTML(systemText(system, "description"))}</p>
         <div class="system-card__footer">
           <div class="system-card__tags">
-            <span>${escapeHTML(translate(cat?.label || system.category))}</span>
+            <span>${escapeHTML(currentLang === "en" ? (cat?.labelEn || system.category) : (cat?.label || system.category))}</span>
             ${tags}
           </div>
           ${link}
