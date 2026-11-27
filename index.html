@@ -3,17 +3,1175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WSS — Sistemas de información a medida. Gestión, inmobiliaria, IA, banca, finanzas, legales y más. Desarrollados por un ingeniero en sistemas y abogado." />
+  <meta name="description" content="WSS Web: ideas de sistemas y aplicaciones para finanzas, salud, comercio, productividad, inteligencia artificial y entretenimiento." />
   <meta name="author" content="WSS - Julio A. Leiva" />
   <meta name="theme-color" content="#0a0a0a" />
-  <meta property="og:title" content="WSS | Systems & Solutions" />
-  <meta property="og:description" content="Portafolio de sistemas de gestión, IA, legales, finanzas y más. Soluciones a medida." />
+  <meta property="og:title" content="WSS Web | Ideas de aplicaciones y sistemas a medida" />
+  <meta property="og:description" content="Explorá 25 ideas de aplicaciones web para finanzas, salud, comercio, productividad, IA y más." />
   <meta property="og:type" content="website" />
-  <title>WSS | Systems & Solutions</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta property="og:url" content="https://wss-principal.netlify.app/" />
+  <link rel="canonical" href="https://wss-principal.netlify.app/" />
+  <title>WSS Web | Ideas de aplicaciones y sistemas a medida</title>
+  <style>
+/* ============================================
+   WSS — Eclipse Theme
+   Black / White / Gray · Modern sales landing
+   ============================================ */
+
+:root {
+  --bg: #070708;
+  --bg-elevated: #0e0e10;
+  --bg-card: #121214;
+  --bg-card-hover: #18181b;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --white: #ffffff;
+  --gray-100: #f4f4f5;
+  --gray-200: #e4e4e7;
+  --gray-300: #d4d4d8;
+  --gray-400: #a1a1aa;
+  --gray-500: #71717a;
+  --gray-600: #52525b;
+  --gray-700: #3f3f46;
+  --gray-800: #27272a;
+  --gray-900: #18181b;
+  --accent: #fafafa;
+  --accent-soft: rgba(250, 250, 250, 0.08);
+  --glow: rgba(255, 255, 255, 0.12);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --container: 1120px;
+  --header-h: 72px;
+  --font: system-ui, sans-serif;
+  --mono: ui-monospace, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 0.28s var(--ease);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+ul { list-style: none; }
+strong { font-weight: 600; }
+
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.mono { font-family: var(--mono); }
+
+/* ---------- Background eclipse ---------- */
+.bg-eclipse {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.eclipse-orb {
+  position: absolute;
+  top: -12%;
+  right: -8%;
+  width: min(62vw, 720px);
+  height: min(62vw, 720px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 42%, #1a1a1d 0%, #0a0a0b 48%, #000 72%),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08), transparent 40%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 0 120px rgba(255,255,255,0.05),
+    inset -40px -20px 80px rgba(255,255,255,0.04);
+  animation: floatOrb 14s ease-in-out infinite;
+}
+
+.eclipse-corona {
+  position: absolute;
+  top: -18%;
+  right: -14%;
+  width: min(78vw, 900px);
+  height: min(78vw, 900px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 58%);
+  filter: blur(8px);
+  animation: pulseCorona 8s ease-in-out infinite;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 70% 10%, black 10%, transparent 70%);
+  opacity: 0.5;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-18px, 22px, 0) scale(1.03); }
+}
+
+@keyframes pulseCorona {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-h);
+  transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.header.is-scrolled {
+  background: rgba(7, 7, 8, 0.78);
+  backdrop-filter: blur(16px);
+  border-bottom-color: var(--border);
+}
+
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  z-index: 110;
+}
+
+.logo__mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, #2a2a2e 0%, #0a0a0a 55%),
+    #111;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.25),
+    8px -4px 0 -6px #fafafa,
+    0 0 24px rgba(255,255,255,0.12);
+  position: relative;
+}
+
+.logo__text {
+  font-size: 1.05rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav__link {
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.nav__link--cta {
+  color: var(--bg);
+  background: var(--white);
+  margin-left: 0.35rem;
+}
+
+.nav__link--cta:hover {
+  background: var(--gray-200);
+  color: var(--bg);
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ---------- Typography helpers ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--gray-500);
+}
+
+.section {
+  padding: 6.5rem 0;
+}
+
+.section__head {
+  max-width: 640px;
+  margin-bottom: 2.75rem;
+}
+
+.section__title {
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.section__desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 54ch;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #fff 0%, #cfcfd4 40%, #8b8b93 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.link {
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  transition: border-color var(--transition);
+}
+
+.link:hover { border-bottom-color: var(--white); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.9rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: var(--white);
+  color: #0a0a0a;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.08);
+}
+
+.btn--primary:hover {
+  background: var(--gray-200);
+  box-shadow: 0 14px 40px rgba(255,255,255,0.12);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  background: var(--accent-soft);
+  border-color: rgba(255,255,255,0.28);
+}
+
+.btn--light {
+  background: var(--white);
+  color: #0a0a0a;
+}
+
+.btn--full { width: 100%; }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-h) + 2.5rem) 0 4rem;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.hero__lead {
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  max-width: 48ch;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2.75rem;
+}
+
+.hero__stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat__value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.stat__label {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.eclipse-card {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+.eclipse-card__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.03), transparent 45%);
+  box-shadow:
+    inset 0 0 60px rgba(255,255,255,0.04),
+    0 0 80px rgba(255,255,255,0.05);
+  animation: spinSlow 40s linear infinite;
+}
+
+.eclipse-card__ring::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.14);
+}
+
+.eclipse-card__ring::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--white);
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.eclipse-card__core {
+  position: relative;
+  z-index: 1;
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #1a1a1d 0%, #0a0a0b 55%, #050505 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  gap: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.eclipse-card__core span {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+}
+
+.eclipse-card__core strong {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.eclipse-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.eclipse-card__tags li {
+  font-size: 0.68rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.03);
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Filters & systems ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+}
+
+.filter {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-muted);
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.filter:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: var(--accent-soft);
+}
+
+.filter.is-active {
+  background: var(--white);
+  color: #0a0a0a;
+  border-color: var(--white);
+}
+
+.systems__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+.system-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-height: 250px;
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.system-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 45%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.system-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.2);
+  background: var(--bg-card-hover);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.system-card:hover::before { opacity: 1; }
+
+.system-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.system-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  font-size: 1.2rem;
+}
+
+.system-card__badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+}
+
+.system-card__badge.is-live {
+  color: #d4d4d8;
+  border-color: rgba(255,255,255,0.2);
+}
+
+.system-card__badge.is-soon {
+  color: var(--gray-500);
+}
+
+.system-card h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.system-card p {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.system-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.system-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.system-card__tags span {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.45rem;
+}
+
+.system-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.system-card__link svg {
+  transition: transform var(--transition);
+}
+
+.system-card:hover .system-card__link svg {
+  transform: translateX(3px);
+}
+
+.system-card.is-disabled {
+  opacity: 0.72;
+}
+
+.system-card.is-disabled .system-card__link {
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.systems__empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+/* ---------- Value ---------- */
+.value__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.value-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+}
+
+.value-card:hover {
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.035);
+}
+
+.value-card__icon {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.1rem;
+}
+
+.value-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.55rem;
+  letter-spacing: -0.02em;
+}
+
+.value-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- About ---------- */
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.portrait {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.portrait__eclipse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 30%, #2a2a2e, #0b0b0c 55%, #000 75%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.1),
+    0 0 80px rgba(255,255,255,0.06),
+    28px -12px 0 -8px rgba(255,255,255,0.08);
+}
+
+.portrait__frame {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: linear-gradient(160deg, #161618, #09090b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  box-shadow: inset 0 0 40px rgba(255,255,255,0.04);
+}
+
+.portrait__initials {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.portrait__role {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+}
+
+.about__content p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  max-width: 54ch;
+}
+
+.about__content p strong { color: var(--text); }
+
+.about__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.about__list li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.about__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 10px rgba(255,255,255,0.45);
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  padding: 0 0 2rem;
+}
+
+.cta-band__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 2.2rem;
+  border-radius: calc(var(--radius) + 4px);
+  border: 1px solid rgba(255,255,255,0.12);
+  background:
+    radial-gradient(circle at 0% 50%, rgba(255,255,255,0.08), transparent 40%),
+    linear-gradient(120deg, #141416, #0b0b0d 55%, #121214);
+  box-shadow: var(--shadow);
+}
+
+.cta-band h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.cta-band p { color: var(--text-muted); }
+
+/* ---------- Contact ---------- */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.contact__channels {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.channel:hover {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.04);
+}
+
+.channel__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+
+.channel__value {
+  font-weight: 600;
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 2px);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: #0a0a0b;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem 0.95rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+}
+
+.field select {
+  background-image: linear-gradient(45deg, transparent 50%, #a1a1aa 50%),
+    linear-gradient(135deg, #a1a1aa 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.2rem;
+}
+
+.field textarea { resize: vertical; min-height: 120px; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(255,255,255,0.35);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+}
+
+.field input.is-invalid,
+.field select.is-invalid,
+.field textarea.is-invalid {
+  border-color: #a1a1aa;
+}
+
+.honey {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.form-note {
+  min-height: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.form-note.is-success { color: #d4d4d8; }
+.form-note.is-error { color: #a1a1aa; }
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0 2rem;
+  margin-top: 2rem;
+}
+
+.footer__inner {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer__brand strong {
+  display: block;
+  letter-spacing: 0.08em;
+}
+
+.footer__brand p {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+}
+
+.footer__links a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  transition: color var(--transition);
+}
+
+.footer__links a:hover { color: var(--text); }
+
+.footer__copy {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* ---------- To top ---------- */
+.to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: rgba(10,10,11,0.85);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+  z-index: 90;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.to-top:hover {
+  background: var(--white);
+  color: #0a0a0a;
+}
+
+/* ---------- Reveal animations ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .hero__grid,
+  .about__grid,
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-h) + 2rem);
+  }
+
+  .hero__visual {
+    order: -1;
+  }
+
+  .eclipse-card {
+    width: min(100%, 300px);
+  }
+
+  .systems__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-band__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: rgba(7,7,8,0.96);
+    backdrop-filter: blur(18px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__link {
+    font-size: 1.25rem;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .nav__link--cta {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .systems__grid,
+  .value__grid,
+  .about__list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__stats { gap: 1.25rem; }
+  .section { padding: 4.5rem 0; }
+  .contact-form { padding: 1.15rem; }
+  .cta-band__inner { padding: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+  </style>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%230a0a0a' stroke='%23e8e8e8' stroke-width='4'/><circle cx='62' cy='42' r='28' fill='%230a0a0a'/></svg>" />
 </head>
 <body>
@@ -28,7 +1186,7 @@
     <div class="container header__inner">
       <a href="#inicio" class="logo" aria-label="WSS inicio">
         <span class="logo__mark" aria-hidden="true"></span>
-        <span class="logo__text">WSS</span>
+        <span class="logo__text">WSS Web</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Principal">
@@ -51,29 +1209,27 @@
         <div class="hero__content reveal">
           <p class="eyebrow">Ingeniero en Sistemas · Abogado</p>
           <h1 class="hero__title">
-            Sistemas que<br />
-            <span class="text-gradient">eclipsan</span> lo común
+            Ideas que pueden<br />
+            <span class="text-gradient">convertirse</span> en sistemas
           </h1>
           <p class="hero__lead">
-            Diseño y desarrollo soluciones de software a medida para empresas y profesionales.
-            Gestión, inmobiliaria, inteligencia artificial, banca, finanzas, legales y más —
-            con rigor técnico y visión jurídica.
+            Explorá nuestras ideas de aplicaciones web, organizadas por rubro. Si alguna resuelve un problema de tu negocio, conversemos para desarrollarla a medida.
           </p>
           <div class="hero__actions">
             <a href="#sistemas" class="btn btn--primary">
               Ver sistemas
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="#contacto" class="btn btn--ghost">Solicitar demo</a>
+            <a href="#contacto" class="btn btn--ghost">Consultar una idea</a>
           </div>
           <div class="hero__stats">
             <div class="stat">
-              <span class="stat__value" data-count="8">0</span>
+              <span class="stat__value" id="categoryCount">0</span>
               <span class="stat__label">Rubros</span>
             </div>
             <div class="stat">
               <span class="stat__value" id="systemCount">0</span>
-              <span class="stat__label">Sistemas</span>
+              <span class="stat__label">Ideas</span>
             </div>
             <div class="stat">
               <span class="stat__value">∞</span>
@@ -105,10 +1261,9 @@
       <div class="container">
         <div class="section__head reveal">
           <p class="eyebrow">Portafolio</p>
-          <h2 class="section__title">Sistemas por rubro</h2>
+          <h2 class="section__title">Ideas de sistemas por rubro</h2>
           <p class="section__desc">
-            Explorá las soluciones disponibles. Cada tarjeta enlaza al sistema en producción o demo.
-            ¿Nuevo producto? Se suma en segundos desde el catálogo.
+            Conocé las propuestas que estamos explorando. Cada tarjeta resume una idea; escribinos si querés impulsarla o adaptarla a tu proyecto.
           </p>
         </div>
 
@@ -116,10 +1271,161 @@
           <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
         </div>
 
-        <div class="systems__grid" id="systemsGrid" aria-live="polite"></div>
+        <div class="systems__grid" id="systemsGrid" aria-live="polite">
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🔎</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Consulta de deudas</h3>
+            <p>Consulta de información de deudas por CUIT, CUIL o DNI, con detalle por entidad y fuentes como BCRA o Nosis según disponibilidad y autorización.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">💳</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Sistema de préstamos</h3>
+            <p>Administración de solicitudes, cuotas, pagos y seguimiento de préstamos.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">👛</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Billetera virtual</h3>
+            <p>Concepto de billetera para gestionar saldos, movimientos y transferencias.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🧾</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Impuesto a las Ganancias</h3>
+            <p>Herramienta para organizar datos y calcular estimaciones del impuesto a las Ganancias.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🤝</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Red de préstamos entre personas</h3>
+            <p>Plataforma para conectar a quienes buscan financiamiento con posibles prestamistas.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">📊</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Márgenes de tarjetas</h3>
+            <p>Consulta centralizada de límites y márgenes disponibles de distintas tarjetas de crédito, sujeta a integraciones autorizadas.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="salud">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">📅</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Turnos médicos</h3>
+            <p>Agenda de profesionales, disponibilidad, reservas y recordatorios de turnos.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Salud</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="salud">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🩺</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Historias clínicas</h3>
+            <p>Registro y consulta de antecedentes, consultas y evolución de pacientes con acceso controlado.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Salud</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="comercio">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🔄</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Plataforma de trueque</h3>
+            <p>Publicación de bienes y servicios e intermediación entre personas que quieren intercambiarlos.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Comercio y comunidad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="comercio">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">💚</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Plataforma de donaciones</h3>
+            <p>Espacio para publicar causas, recibir aportes y seguir campañas solidarias.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Comercio y comunidad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="comercio">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">✨</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Daresdar</h3>
+            <p>Idea de producto Daresdar: propuesta y funcionalidades por definir.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Comercio y comunidad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="comercio">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🎁</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Givy.com.ar</h3>
+            <p>Idea de producto Givy.com.ar: propuesta y funcionalidades por definir.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Comercio y comunidad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="comercio">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">📦</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Alquiler de objetos</h3>
+            <p>Marketplace para publicar, encontrar y alquilar objetos entre personas.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Comercio y comunidad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="productividad">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">✍️</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Herramienta de firma digital</h3>
+            <p>Flujo para preparar, firmar y verificar documentos digitales.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Productividad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="productividad">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🧩</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Editor de diagramas</h3>
+            <p>Alternativa web para crear diagramas de flujo, procesos y esquemas visuales.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Productividad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="productividad">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">📄</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Visor Markdown</h3>
+            <p>Visualización de archivos Markdown con soporte para diagramas Mermaid.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Productividad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="productividad">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🗃️</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Visor SQL</h3>
+            <p>Lectura y exploración de archivos SQL desde una interfaz web.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Productividad</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="ia">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🖼️</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Metadatos de imágenes</h3>
+            <p>Consulta de los metadatos disponibles en un archivo de imagen.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>IA y descubrimiento</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="ia">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🤖</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Análisis de imágenes con IA</h3>
+            <p>Herramienta que estima si una imagen pudo haber sido generada con IA, mostrando el resultado como indicio y no como certeza.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>IA y descubrimiento</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="ia">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🔍</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Buscador de apps en GitHub</h3>
+            <p>Descubrimiento de aplicaciones y proyectos publicados en GitHub.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>IA y descubrimiento</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="ia">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🧠</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Buscador de skills de IA</h3>
+            <p>Búsqueda y exploración de skills para IA publicadas en GitHub.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>IA y descubrimiento</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="entretenimiento">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🃏</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Juego de truco</h3>
+            <p>Versión web del truco para jugar partidas en línea.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Entretenimiento</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="entretenimiento">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🎟️</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Eventos y apuestas</h3>
+            <p>Concepto de plataforma para eventos y apuestas, sujeto a la normativa aplicable.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Entretenimiento</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="educacion">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">💬</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Aplicaciones web con WhatsApp</h3>
+            <p>Soluciones web que integran conversaciones y flujos de atención por WhatsApp.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Educación y canales</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="educacion">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🎓</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Cursos web con Shopify</h3>
+            <p>Propuesta de cursos web comercializados mediante Shopify.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Educación y canales</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+        </div>
 
         <p class="systems__empty" id="systemsEmpty" hidden>
-          No hay sistemas en este rubro todavía. Pronto habrá novedades.
+          No hay ideas en este rubro todavía.
         </p>
       </div>
     </section>
@@ -177,9 +1483,8 @@
             productos digitales que resuelven problemas reales de negocio.
           </p>
           <p>
-            Bajo la marca <strong>WSS</strong> desarrollo y comercializo sistemas en múltiples rubros:
-            desde gestión operativa e inmobiliaria hasta inteligencia artificial, banca, finanzas,
-            enfermería, juegos y soluciones legales.
+            Bajo la marca <strong>WSS Web</strong> desarrollo y comercializo sistemas en múltiples rubros:
+            desde finanzas y salud hasta comercio, productividad, inteligencia artificial y juegos.
           </p>
           <ul class="about__list">
             <li>Arquitectura limpia y escalable</li>
@@ -197,7 +1502,7 @@
       <div class="container cta-band__inner reveal">
         <div>
           <h2>¿Tenés un proceso que necesita un sistema?</h2>
-          <p>Contame el rubro y el problema. Te propongo una solución concreta y una demo.</p>
+          <p>Contame el rubro y el problema. Podemos definir juntos una solución concreta.</p>
         </div>
         <a href="#contacto" class="btn btn--light">Contactar ahora</a>
       </div>
@@ -210,7 +1515,7 @@
           <p class="eyebrow">Contacto</p>
           <h2 class="section__title">Empecemos algo grande</h2>
           <p class="section__desc">
-            Escribime para demos, cotizaciones o partnerships. El mensaje llega directo a
+            Escribime para conversar sobre una idea, pedir una cotización o proponer una colaboración. El mensaje llega directo a
             <a class="link" href="mailto:wssarg@gmail.com">wssarg@gmail.com</a>.
           </p>
           <div class="contact__channels">
@@ -243,14 +1548,13 @@
             <label for="rubro">Rubro de interés</label>
             <select id="rubro" name="rubro" required>
               <option value="" disabled selected>Seleccioná un rubro</option>
-              <option value="Gestion">Gestión</option>
-              <option value="Inmobiliaria">Inmobiliaria</option>
-              <option value="Inteligencia Artificial">Inteligencia Artificial</option>
-              <option value="Juegos">Juegos</option>
-              <option value="Enfermeria">Enfermería</option>
-              <option value="Banca">Banca</option>
-              <option value="Finanzas">Finanzas</option>
-              <option value="Legales">Legales</option>
+              <option value="Finanzas y crédito">Finanzas y crédito</option>
+              <option value="Salud">Salud</option>
+              <option value="Comercio y comunidad">Comercio y comunidad</option>
+              <option value="Productividad">Productividad</option>
+              <option value="IA y descubrimiento">IA y descubrimiento</option>
+              <option value="Entretenimiento">Entretenimiento</option>
+              <option value="Educación y canales">Educación y canales</option>
               <option value="Otro / A medida">Otro / A medida</option>
             </select>
           </div>
@@ -272,8 +1576,8 @@
       <div class="footer__brand">
         <span class="logo__mark" aria-hidden="true"></span>
         <div>
-          <strong>WSS</strong>
-          <p>Sistemas de información · Eclipse edition</p>
+          <strong>WSS Web</strong>
+          <p>Ideas y desarrollo de aplicaciones web</p>
         </div>
       </div>
       <div class="footer__links">
@@ -290,7 +1594,326 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
 
-  <script src="js/systems.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+const CATEGORIES = {
+  finanzas: { id: 'finanzas', label: 'Finanzas y crédito' },
+  salud: { id: 'salud', label: 'Salud' },
+  comercio: { id: 'comercio', label: 'Comercio y comunidad' },
+  productividad: { id: 'productividad', label: 'Productividad' },
+  ia: { id: 'ia', label: 'IA y descubrimiento' },
+  entretenimiento: { id: 'entretenimiento', label: 'Entretenimiento' },
+  educacion: { id: 'educacion', label: 'Educación y canales' },
+};
+
+// Ideas del portafolio. Agregar una URL y cambiar el estado al publicar cada producto.
+const SYSTEMS = [
+  { id: 'consulta-deudas', name: 'Consulta de deudas', category: 'finanzas', description: 'Consulta de información de deudas por CUIT, CUIL o DNI, con detalle por entidad y fuentes como BCRA o Nosis según disponibilidad y autorización.', tags: ['Deudas', 'Entidades'], icon: '🔎' },
+  { id: 'prestamos', name: 'Sistema de préstamos', category: 'finanzas', description: 'Administración de solicitudes, cuotas, pagos y seguimiento de préstamos.', tags: ['Créditos', 'Cuotas'], icon: '💳' },
+  { id: 'billetera', name: 'Billetera virtual', category: 'finanzas', description: 'Concepto de billetera para gestionar saldos, movimientos y transferencias.', tags: ['Pagos', 'Movimientos'], icon: '👛' },
+  { id: 'ganancias', name: 'Impuesto a las Ganancias', category: 'finanzas', description: 'Herramienta para organizar datos y calcular estimaciones del impuesto a las Ganancias.', tags: ['Impuestos', 'Cálculos'], icon: '🧾' },
+  { id: 'intermediacion-prestamos', name: 'Red de préstamos entre personas', category: 'finanzas', description: 'Plataforma para conectar a quienes buscan financiamiento con posibles prestamistas.', tags: ['Intermediación', 'Crédito'], icon: '🤝' },
+  { id: 'margenes-tarjetas', name: 'Márgenes de tarjetas', category: 'finanzas', description: 'Consulta centralizada de límites y márgenes disponibles de distintas tarjetas de crédito, sujeta a integraciones autorizadas.', tags: ['Tarjetas', 'Consulta'], icon: '📊' },
+  { id: 'turnos-medicos', name: 'Turnos médicos', category: 'salud', description: 'Agenda de profesionales, disponibilidad, reservas y recordatorios de turnos.', tags: ['Agenda', 'Pacientes'], icon: '📅' },
+  { id: 'historias-clinicas', name: 'Historias clínicas', category: 'salud', description: 'Registro y consulta de antecedentes, consultas y evolución de pacientes con acceso controlado.', tags: ['Pacientes', 'Registros'], icon: '🩺' },
+  { id: 'trueque', name: 'Plataforma de trueque', category: 'comercio', description: 'Publicación de bienes y servicios e intermediación entre personas que quieren intercambiarlos.', tags: ['Intercambio', 'Comunidad'], icon: '🔄' },
+  { id: 'donaciones', name: 'Plataforma de donaciones', category: 'comercio', description: 'Espacio para publicar causas, recibir aportes y seguir campañas solidarias.', tags: ['Causas', 'Aportes'], icon: '💚' },
+  { id: 'daresdar', name: 'Daresdar', category: 'comercio', description: 'Idea de producto Daresdar: propuesta y funcionalidades por definir.', tags: ['Idea', 'Comunidad'], icon: '✨' },
+  { id: 'givy', name: 'Givy.com.ar', category: 'comercio', description: 'Idea de producto Givy.com.ar: propuesta y funcionalidades por definir.', tags: ['Idea', 'Marca'], icon: '🎁' },
+  { id: 'alquiler-objetos', name: 'Alquiler de objetos', category: 'comercio', description: 'Marketplace para publicar, encontrar y alquilar objetos entre personas.', tags: ['Marketplace', 'Alquiler'], icon: '📦' },
+  { id: 'firma-digital', name: 'Herramienta de firma digital', category: 'productividad', description: 'Flujo para preparar, firmar y verificar documentos digitales.', tags: ['Documentos', 'Firma'], icon: '✍️' },
+  { id: 'visio', name: 'Editor de diagramas', category: 'productividad', description: 'Alternativa web para crear diagramas de flujo, procesos y esquemas visuales.', tags: ['Diagramas', 'Diseño'], icon: '🧩' },
+  { id: 'visor-md', name: 'Visor Markdown', category: 'productividad', description: 'Visualización de archivos Markdown con soporte para diagramas Mermaid.', tags: ['Markdown', 'Mermaid'], icon: '📄' },
+  { id: 'visor-sql', name: 'Visor SQL', category: 'productividad', description: 'Lectura y exploración de archivos SQL desde una interfaz web.', tags: ['SQL', 'Archivos'], icon: '🗃️' },
+  { id: 'metadatos-imagen', name: 'Metadatos de imágenes', category: 'ia', description: 'Consulta de los metadatos disponibles en un archivo de imagen.', tags: ['Imágenes', 'Metadatos'], icon: '🖼️' },
+  { id: 'deteccion-ia', name: 'Análisis de imágenes con IA', category: 'ia', description: 'Herramienta que estima si una imagen pudo haber sido generada con IA, mostrando el resultado como indicio y no como certeza.', tags: ['Imágenes', 'IA'], icon: '🤖' },
+  { id: 'buscador-apps', name: 'Buscador de apps en GitHub', category: 'ia', description: 'Descubrimiento de aplicaciones y proyectos publicados en GitHub.', tags: ['GitHub', 'Apps'], icon: '🔍' },
+  { id: 'buscador-skills', name: 'Buscador de skills de IA', category: 'ia', description: 'Búsqueda y exploración de skills para IA publicadas en GitHub.', tags: ['GitHub', 'Skills'], icon: '🧠' },
+  { id: 'truco', name: 'Juego de truco', category: 'entretenimiento', description: 'Versión web del truco para jugar partidas en línea.', tags: ['Cartas', 'Juego'], icon: '🃏' },
+  { id: 'eventos-apuestas', name: 'Eventos y apuestas', category: 'entretenimiento', description: 'Concepto de plataforma para eventos y apuestas, sujeto a la normativa aplicable.', tags: ['Eventos', 'Apuestas'], icon: '🎟️' },
+  { id: 'apps-whatsapp', name: 'Aplicaciones web con WhatsApp', category: 'educacion', description: 'Soluciones web que integran conversaciones y flujos de atención por WhatsApp.', tags: ['WhatsApp', 'Integraciones'], icon: '💬' },
+  { id: 'cursos-shopify', name: 'Cursos web con Shopify', category: 'educacion', description: 'Propuesta de cursos web comercializados mediante Shopify.', tags: ['Cursos', 'Shopify'], icon: '🎓' },
+].map((system) => ({ ...system, url: null, status: 'idea' }));
+
+window.WSS = { CATEGORIES, SYSTEMS };
+
+(() => {
+  "use strict";
+
+  const { CATEGORIES, SYSTEMS } = window.WSS || { CATEGORIES: {}, SYSTEMS: [] };
+
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+  /* ---------- Header / nav ---------- */
+  const header = $("#header");
+  const nav = $("#nav");
+  const navToggle = $("#navToggle");
+  const toTop = $("#toTop");
+
+  const onScroll = () => {
+    const y = window.scrollY;
+    header?.classList.toggle("is-scrolled", y > 12);
+    toTop?.classList.toggle("is-visible", y > 500);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  navToggle?.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+
+  $$(".nav__link", nav).forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      navToggle?.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    });
+  });
+
+  toTop?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  /* ---------- Year ---------- */
+  const yearEl = $("#year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Reveal on scroll ---------- */
+  const revealEls = $$(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  /* ---------- Systems catalog ---------- */
+  const filtersEl = $("#filters");
+  const gridEl = $("#systemsGrid");
+  const emptyEl = $("#systemsEmpty");
+  const systemCountEl = $("#systemCount");
+  const categoryCountEl = $("#categoryCount");
+  if (categoryCountEl) categoryCountEl.textContent = String(Object.keys(CATEGORIES).length);
+
+  if (systemCountEl) {
+    systemCountEl.textContent = String(SYSTEMS.length);
+  }
+
+  const statusLabel = {
+    live: "En vivo",
+    beta: "Beta",
+    soon: "Próximamente",
+    idea: "Idea",
+  };
+
+  function buildFilters() {
+    if (!filtersEl) return;
+
+    Object.values(CATEGORIES).forEach((cat) => {
+      const btn = document.createElement("button");
+      btn.className = "filter";
+      btn.type = "button";
+      btn.dataset.filter = cat.id;
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", "false");
+      btn.textContent = cat.label;
+      filtersEl.appendChild(btn);
+    });
+
+    filtersEl.addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter");
+      if (!btn) return;
+      $$(".filter", filtersEl).forEach((b) => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-selected", "true");
+      renderSystems(btn.dataset.filter);
+    });
+  }
+
+  function cardHTML(system) {
+    const cat = CATEGORIES[system.category];
+    const isLive = Boolean(system.url) && system.status !== "soon";
+    const badgeClass = isLive ? "is-live" : "is-soon";
+    const badgeText = statusLabel[system.status] || (isLive ? "En vivo" : "Próximamente");
+    const tags = (system.tags || [])
+      .slice(0, 3)
+      .map((t) => `<span>${escapeHTML(t)}</span>`)
+      .join("");
+
+    const link = isLive
+      ? `<a class="system-card__link" href="${escapeAttr(system.url)}" target="_blank" rel="noopener noreferrer">
+           Abrir
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+         </a>`
+      : `<a class="system-card__link" href="#contacto">Consultar idea</a>`;
+
+    return `
+      <article class="system-card ${isLive ? "" : "is-idea"}" data-category="${escapeAttr(system.category)}">
+        <div class="system-card__top">
+          <div class="system-card__icon" aria-hidden="true">${system.icon || "◆"}</div>
+          <span class="system-card__badge ${badgeClass}">${escapeHTML(badgeText)}</span>
+        </div>
+        <h3>${escapeHTML(system.name)}</h3>
+        <p>${escapeHTML(system.description)}</p>
+        <div class="system-card__footer">
+          <div class="system-card__tags">
+            <span>${escapeHTML(cat?.label || system.category)}</span>
+            ${tags}
+          </div>
+          ${link}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderSystems(filter = "all") {
+    if (!gridEl) return;
+    const list =
+      filter === "all"
+        ? SYSTEMS
+        : SYSTEMS.filter((s) => s.category === filter);
+
+    if (!list.length) {
+      gridEl.innerHTML = "";
+      emptyEl.hidden = false;
+      return;
+    }
+
+    emptyEl.hidden = true;
+    gridEl.innerHTML = list.map(cardHTML).join("");
+  }
+
+  function escapeHTML(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function escapeAttr(str) {
+    return escapeHTML(str).replace(/'/g, "&#39;");
+  }
+
+  buildFilters();
+  renderSystems("all");
+
+  /* ---------- Contact form ---------- */
+  const form = $("#contactForm");
+  const formNote = $("#formNote");
+  const submitBtn = $("#submitBtn");
+
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    formNote.textContent = "";
+    formNote.className = "form-note";
+
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const rubro = String(data.get("rubro") || "").trim();
+    const message = String(data.get("message") || "").trim();
+    const honey = String(data.get("_honey") || "");
+
+    // honeypot
+    if (honey) return;
+
+    let valid = true;
+    const fields = {
+      name: $("#name"),
+      email: $("#email"),
+      rubro: $("#rubro"),
+      message: $("#message"),
+    };
+
+    Object.values(fields).forEach((el) => el?.classList.remove("is-invalid"));
+
+    if (!name) {
+      fields.name?.classList.add("is-invalid");
+      valid = false;
+    }
+    if (!emailOk(email)) {
+      fields.email?.classList.add("is-invalid");
+      valid = false;
+    }
+    if (!rubro) {
+      fields.rubro?.classList.add("is-invalid");
+      valid = false;
+    }
+    if (!message || message.length < 8) {
+      fields.message?.classList.add("is-invalid");
+      valid = false;
+    }
+
+    if (!valid) {
+      formNote.textContent = "Revisá los campos marcados e intentá de nuevo.";
+      formNote.classList.add("is-error");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    const original = submitBtn.textContent;
+    submitBtn.textContent = "Enviando...";
+
+    try {
+      // FormSubmit AJAX endpoint
+      const res = await fetch("https://formsubmit.co/ajax/wssarg@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          rubro,
+          message,
+          _subject: "WSS — Nuevo contacto desde la web",
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      if (!res.ok) throw new Error("send_failed");
+
+      form.reset();
+      formNote.textContent = "Mensaje enviado. Te respondo a la brevedad.";
+      formNote.classList.add("is-success");
+    } catch {
+      // Fallback: mailto si el servicio falla o no está activado
+      const subject = encodeURIComponent(`WSS — Contacto (${rubro})`);
+      const body = encodeURIComponent(
+        `Nombre: ${name}\nEmail: ${email}\nRubro: ${rubro}\n\n${message}`
+      );
+      window.location.href = `mailto:wssarg@gmail.com?subject=${subject}&body=${body}`;
+      formNote.textContent =
+        "Abriendo tu cliente de correo como alternativa...";
+      formNote.classList.add("is-success");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = original;
+    }
+  });
+})();
+
+  </script>
 </body>
 </html>

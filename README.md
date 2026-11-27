@@ -1,94 +1,13 @@
-# WSS — Systems & Solutions
+# WSS Web
 
-Landing estática moderna para presentar y vender sistemas de información.
+Sitio público: https://wss-principal.netlify.app/
 
-**Autor:** Julio A. Leiva — Ingeniero en Sistemas de Información y Abogado  
-**Sitio web:** [https://julioaleiva.github.io/wss-principal/](https://julioaleiva.github.io/wss-principal/)  
-**Contacto:** [wssarg@gmail.com](mailto:wssarg@gmail.com)  
-**GitHub:** [julioaleiva](https://github.com/julioaleiva)
+La página completa está en `index.html`: HTML, estilos, catálogo y comportamiento JavaScript. No necesita archivos CSS ni JS externos.
 
-## Stack
+## Catálogo
 
-- HTML5
-- CSS3 (tema eclipse: negros, blancos y grises)
-- JavaScript vanilla
+Incluye 25 ideas en 7 rubros. Para editar una tarjeta, modificá el array `SYSTEMS` dentro del bloque `<script>` de `index.html`. Las categorías están en `CATEGORIES`. Cada idea usa `status: "idea"` y `url: null`; al publicar un producto, agregá su URL y cambiá el estado a `live` o `beta`.
 
-Sin frameworks. Sin build. Lista para GitHub Pages.
+## Uso local
 
-## Estructura
-
-```
-.
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   ├── systems.js   ← catálogo de sistemas (editar aquí)
-│   └── main.js
-└── README.md
-```
-
-## Cómo agregar un nuevo sistema
-
-Editá `js/systems.js` y sumá un objeto al array `SYSTEMS`:
-
-```js
-{
-  id: "mi-nuevo-sistema",
-  name: "Nombre comercial",
-  category: "gestion", // gestion | inmobiliaria | ia | juegos | enfermeria | banca | finanzas | legales
-  description: "Pitch breve de venta.",
-  url: "https://tu-demo.com", // o null si aún no está publicado
-  status: "live", // live | beta | soon
-  tags: ["Tag1", "Tag2"],
-  icon: "🚀",
-}
-```
-
-Guardá y listo: la página lo muestra filtrado por rubro.
-
-## Contacto (email)
-
-El formulario envía a **wssarg@gmail.com** mediante [FormSubmit](https://formsubmit.co).
-
-La primera vez que alguien envíe un mensaje, FormSubmit pedirá confirmar el correo.  
-Si el servicio no responde, el sitio abre un `mailto:` de respaldo.
-
-## Publicar en GitHub Pages
-
-1. Creá el repositorio (si aún no existe).
-2. Subí estos archivos a la rama `main`.
-3. En el repo: **Settings → Pages → Source: Deploy from a branch → Branch: main / root**.
-4. La URL quedará similar a:  
-   `https://julioaleiva.github.io/<nombre-del-repo>/`
-
-Si usás el repo de usuario `julioaleiva.github.io`, la home será:
-
-`https://julioaleiva.github.io/`
-
-## Vista local
-
-Abrí `index.html` en el navegador, o serví la carpeta:
-
-```bash
-# Python
-python -m http.server 5500
-
-# Node (si tenés npx)
-npx serve .
-```
-
-## Rubros incluidos
-
-- Gestión  
-- Inmobiliaria  
-- Inteligencia Artificial  
-- Juegos  
-- Enfermería  
-- Banca  
-- Finanzas  
-- Legales  
-
----
-
-© WSS — Sistemas que eclipsan lo común.
+Abrí `index.html` directamente en el navegador. El formulario de contacto usa FormSubmit y, si falla, abre un correo de respaldo.
