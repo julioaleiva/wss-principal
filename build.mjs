@@ -71,9 +71,9 @@ const cards = systems.map(system => {
   const live = Boolean(system.url) && system.status !== 'soon';
   const link = live
     ? `<a class="system-card__link" href="${escapeHTML(system.url)}" target="_blank" rel="noopener noreferrer">Abrir sitio</a>`
-    : '<a class="system-card__link" href="#contacto">Consultar idea</a>';
+    : '';
   return `          <article class="system-card ${live ? 'is-live' : 'is-idea'}" data-category="${escapeHTML(system.category)}">
-            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">${escapeHTML(system.icon || '◆')}</div><span class="system-card__badge ${live ? 'is-live' : 'is-soon'}">${live ? 'En vivo' : 'Idea'}</span></div>
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">${escapeHTML(system.icon || '◆')}</div>${live ? '<span class="system-card__badge is-live">En vivo</span>' : ''}</div>
             <h3>${escapeHTML(system.name.es)}</h3>
             <p>${escapeHTML(system.description.es)}</p>
             <div class="system-card__footer"><div class="system-card__tags"><span>${escapeHTML(categories[system.category].es)}</span></div>${link}</div>
