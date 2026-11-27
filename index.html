@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WSS Web: 33 ideas de sistemas y aplicaciones para finanzas, salud, comercio, industria, inmobiliaria e inteligencia artificial." />
+  <meta name="description" content="WSS Web: 34 ideas de sistemas y aplicaciones para finanzas, salud, comercio, industria, inmobiliaria e inteligencia artificial." />
   <meta name="author" content="WSS - Julio A. Leiva" />
   <meta name="theme-color" content="#0a0a0a" />
   <meta property="og:title" content="WSS Web | Ideas de aplicaciones y sistemas a medida" />
-  <meta property="og:description" content="Explorá 33 ideas de aplicaciones web para finanzas, salud, comercio, industria, inmobiliaria, IA y más." />
+  <meta property="og:description" content="Explorá 34 ideas de aplicaciones web para finanzas, salud, comercio, industria, inmobiliaria, IA y más." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://wss-principal.netlify.app/" />
   <link rel="canonical" href="https://wss-principal.netlify.app/" />
@@ -1171,6 +1171,12 @@ strong { font-weight: 600; }
   }
 }
 
+
+.language-switch { position: relative; z-index: 110; display: inline-flex; gap: .2rem; padding: .2rem; border: 1px solid var(--border-strong); border-radius: 999px; margin-left: auto; }
+.language-switch__button { border: 0; border-radius: 999px; background: transparent; color: var(--text-muted); padding: .35rem .55rem; font: 600 .72rem var(--font); cursor: pointer; }
+.language-switch__button.is-active { background: var(--white); color: var(--bg); }
+.language-switch__button:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+@media (min-width: 769px) { .language-switch { margin-left: 1rem; } }
   </style>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%230a0a0a' stroke='%23e8e8e8' stroke-width='4'/><circle cx='62' cy='42' r='28' fill='%230a0a0a'/></svg>" />
 </head>
@@ -1195,6 +1201,11 @@ strong { font-weight: 600; }
         <a href="#quien-soy" class="nav__link">Quién soy</a>
         <a href="#contacto" class="nav__link nav__link--cta">Contacto</a>
       </nav>
+
+      <div class="language-switch" role="group" aria-label="Idioma">
+        <button type="button" class="language-switch__button is-active" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="language-switch__button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
@@ -1306,6 +1317,12 @@ strong { font-weight: 600; }
             <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">📊</div><span class="system-card__badge is-soon">Idea</span></div>
             <h3>Márgenes de tarjetas</h3>
             <p>Consulta centralizada de límites y márgenes disponibles de distintas tarjetas de crédito, sujeta a integraciones autorizadas.</p>
+            <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
+          </article>
+          <article class="system-card is-idea" data-category="finanzas">
+            <div class="system-card__top"><div class="system-card__icon" aria-hidden="true">🏦</div><span class="system-card__badge is-soon">Idea</span></div>
+            <h3>Sistema Host to Host para banca electrónica</h3>
+            <p>Integración Host to Host para intercambio de archivos y automatización de pagos, cobranzas y conciliaciones con bancos de Red LINK y Banelco, según las interfaces disponibles.</p>
             <div class="system-card__footer"><div class="system-card__tags"><span>Finanzas y crédito</span></div><a class="system-card__link" href="#contacto">Consultar idea</a></div>
           </article>
           <article class="system-card is-idea" data-category="salud">
@@ -1665,6 +1682,7 @@ const SYSTEMS = [
   { id: 'ganancias', name: 'Impuesto a las Ganancias', category: 'finanzas', description: 'Herramienta para organizar datos y calcular estimaciones del impuesto a las Ganancias.', tags: ['Impuestos', 'Cálculos'], icon: '🧾' },
   { id: 'intermediacion-prestamos', name: 'Red de préstamos entre personas', category: 'finanzas', description: 'Plataforma para conectar a quienes buscan financiamiento con posibles prestamistas.', tags: ['Intermediación', 'Crédito'], icon: '🤝' },
   { id: 'margenes-tarjetas', name: 'Márgenes de tarjetas', category: 'finanzas', description: 'Consulta centralizada de límites y márgenes disponibles de distintas tarjetas de crédito, sujeta a integraciones autorizadas.', tags: ['Tarjetas', 'Consulta'], icon: '📊' },
+  { id: 'host-to-host', name: 'Sistema Host to Host para banca electrónica', category: 'finanzas', description: 'Integración Host to Host para intercambio de archivos y automatización de pagos, cobranzas y conciliaciones con bancos de Red LINK y Banelco, según las interfaces disponibles.', tags: ['Red LINK', 'Banelco'], icon: '🏦' },
   { id: 'turnos-medicos', name: 'Turnos médicos', category: 'salud', description: 'Agenda de profesionales, disponibilidad, reservas y recordatorios de turnos.', tags: ['Agenda', 'Pacientes'], icon: '📅' },
   { id: 'historias-clinicas', name: 'Historias clínicas', category: 'salud', description: 'Registro y consulta de antecedentes, consultas y evolución de pacientes con acceso controlado.', tags: ['Pacientes', 'Registros'], icon: '🩺' },
   { id: 'trueque', name: 'Plataforma de trueque', category: 'comercio', description: 'Publicación de bienes y servicios e intermediación entre personas que quieren intercambiarlos.', tags: ['Intercambio', 'Comunidad'], icon: '🔄' },
@@ -1696,6 +1714,271 @@ const SYSTEMS = [
 
 window.WSS = { CATEGORIES, SYSTEMS };
 
+const EN_TEXT = {
+  "Inicio": "Home",
+  "Sistemas": "Systems",
+  "Quién soy": "About me",
+  "Contacto": "Contact",
+  "Ingeniero en Sistemas · Abogado": "Systems engineer · Lawyer",
+  "Ideas que pueden": "Ideas that can",
+  "convertirse": "become",
+  "en sistemas": "systems",
+  "Explorá nuestras ideas de aplicaciones web, organizadas por rubro. Si alguna resuelve un problema de tu negocio, conversemos para desarrollarla a medida.": "Explore our web application ideas by industry. If one solves a problem for your business, let's discuss building it for you.",
+  "Ver sistemas": "View systems",
+  "Consultar una idea": "Ask about an idea",
+  "Rubros": "Industries",
+  "Ideas": "Ideas",
+  "Escalables": "Scalable",
+  "Built to sell.": "Built to sell.",
+  "Built to scale.": "Built to scale.",
+  "Gestión": "Management",
+  "Legal": "Legal",
+  "Finanzas": "Finance",
+  "Portafolio": "Portfolio",
+  "Ideas de sistemas por rubro": "System ideas by industry",
+  "Conocé las propuestas que estamos explorando. Cada tarjeta resume una idea; escribinos si querés impulsarla o adaptarla a tu proyecto.": "Explore the concepts we're developing. Each card summarizes an idea; contact us to bring it to life or tailor it to your project.",
+  "Todos": "All",
+  "Idea": "Idea",
+  "Consultar idea": "Ask about this idea",
+  "No hay ideas en este rubro todavía.": "There are no ideas in this industry yet.",
+  "Por qué WSS": "Why WSS",
+  "Más que código: criterio": "More than code: sound judgment",
+  "Doble expertise": "Combined expertise",
+  "Ingeniería de sistemas + formación jurídica. Soluciones sólidas, auditables y alineadas a la normativa.": "Systems engineering and legal training. Reliable, auditable solutions built with regulatory requirements in mind.",
+  "A medida, no genérico": "Tailored to your needs",
+  "Cada sistema se adapta a tu operación real: flujos, roles, reportes y escalabilidad desde el día uno.": "Each system fits your actual operations: workflows, roles, reports and room to grow.",
+  "Listo para vender": "Ready for market",
+  "Interfaces modernas, demos claras y arquitectura pensada para clientes, partners y crecimiento.": "Modern interfaces, clear demos and architecture designed for customers, partners and growth.",
+  "Soporte continuo": "Ongoing support",
+  "Evolución del producto, nuevas funcionalidades y acompañamiento técnico cuando lo necesitás.": "Product improvements, new features and technical support when you need them.",
+  "Ingeniero. Abogado.": "Engineer. Lawyer.",
+  "Constructor de sistemas.": "System builder.",
+  "Soy": "I am",
+  ", ingeniero en sistemas de información y abogado. Combino arquitectura de software, experiencia de usuario y criterio legal para crear productos digitales que resuelven problemas reales de negocio.": ", a systems engineer and lawyer. I combine software architecture, user experience and legal judgment to build digital products that solve real business problems.",
+  "Bajo la marca": "Under the",
+  "WSS Web": "WSS Web",
+  "desarrollo y comercializo sistemas en múltiples rubros: desde finanzas y salud hasta comercio, productividad, inteligencia artificial y juegos.": "brand, I develop systems across industries: finance, health care, commerce, productivity, artificial intelligence and games.",
+  "Arquitectura limpia y escalable": "Clean, scalable architecture",
+  "Enfoque comercial y de producto": "Business and product focus",
+  "Cumplimiento y trazabilidad": "Compliance and traceability",
+  "Entrega continua de valor": "Continuous delivery of value",
+  "Hablemos de tu proyecto": "Let's talk about your project",
+  "¿Tenés un proceso que necesita un sistema?": "Have a process that needs a system?",
+  "Contame el rubro y el problema. Podemos definir juntos una solución concreta.": "Tell me about your industry and the problem. We can define a practical solution together.",
+  "Contactar ahora": "Get in touch",
+  "Empecemos algo grande": "Let's build something great",
+  "Escribime para conversar sobre una idea, pedir una cotización o proponer una colaboración. El mensaje llega directo a": "Write to discuss an idea, request a quote or propose a collaboration. Your message goes directly to",
+  "Email": "Email",
+  "Nombre": "Name",
+  "Rubro de interés": "Industry of interest",
+  "Seleccioná un rubro": "Choose an industry",
+  "Otro / A medida": "Other / Custom",
+  "Mensaje": "Message",
+  "Enviar mensaje": "Send message",
+  "Ideas y desarrollo de aplicaciones web": "Web application ideas and development",
+  "WSS. Todos los derechos reservados.": "WSS. All rights reserved.",
+  "Finanzas y crédito": "Finance and credit",
+  "Salud": "Health care",
+  "Comercio y comunidad": "Commerce and community",
+  "Productividad": "Productivity",
+  "IA y descubrimiento": "AI and discovery",
+  "Entretenimiento": "Entertainment",
+  "Educación y canales": "Education and channels",
+  "Inmobiliaria": "Real estate",
+  "Industria y agro": "Industry and agriculture",
+  "Deudas": "Debt",
+  "Entidades": "Institutions",
+  "Créditos": "Loans",
+  "Cuotas": "Installments",
+  "Pagos": "Payments",
+  "Movimientos": "Transactions",
+  "Impuestos": "Taxes",
+  "Cálculos": "Calculations",
+  "Intermediación": "Matchmaking",
+  "Crédito": "Credit",
+  "Tarjetas": "Cards",
+  "Consulta": "Inquiry",
+  "Agenda": "Scheduling",
+  "Pacientes": "Patients",
+  "Registros": "Records",
+  "Intercambio": "Exchange",
+  "Comunidad": "Community",
+  "Causas": "Causes",
+  "Aportes": "Contributions",
+  "Marca": "Brand",
+  "Alquiler": "Rentals",
+  "Documentos": "Documents",
+  "Firma": "Signature",
+  "Diagramas": "Diagrams",
+  "Diseño": "Design",
+  "Archivos": "Files",
+  "Imágenes": "Images",
+  "Metadatos": "Metadata",
+  "Cartas": "Cards",
+  "Juego": "Game",
+  "Eventos": "Events",
+  "Apuestas": "Betting",
+  "Integraciones": "Integrations",
+  "Cursos": "Courses",
+  "Inventario": "Inventory",
+  "Laboratorio": "Laboratory",
+  "Propiedades": "Properties",
+  "Obra social": "Health insurance",
+  "Producción": "Production",
+  "Operaciones": "Operations",
+  "Abrir": "Open",
+  "En vivo": "Live",
+  "Próximamente": "Coming soon",
+  "WSS Web | Ideas de aplicaciones y sistemas a medida": "WSS Web | Web application and system ideas",
+  "WSS Web: 34 ideas de sistemas y aplicaciones para finanzas, salud, comercio, industria, inmobiliaria e inteligencia artificial.": "WSS Web: 34 system and application ideas for finance, health care, commerce, industry, real estate and artificial intelligence.",
+  "Explorá 34 ideas de aplicaciones web para finanzas, salud, comercio, industria, inmobiliaria, IA y más.": "Explore 34 web application ideas for finance, health care, commerce, industry, real estate, AI and more.",
+  "Tu nombre": "Your name",
+  "Contame qué necesitás...": "Tell me what you need...",
+  "WSS inicio": "WSS home",
+  "Principal": "Main navigation",
+  "Idioma": "Language",
+  "Abrir menú": "Open menu",
+  "Volver arriba": "Back to top"
+};
+const EN_SYSTEMS = {
+  "consulta-deudas": {
+    "name": "Debt inquiry",
+    "description": "Look up debt information by CUIT, CUIL or DNI, with details by institution and sources such as BCRA or Nosis, subject to availability and authorization."
+  },
+  "prestamos": {
+    "name": "Loan management system",
+    "description": "Manage loan applications, installments, payments and follow-up."
+  },
+  "billetera": {
+    "name": "Digital wallet",
+    "description": "A wallet concept to manage balances, transactions and transfers."
+  },
+  "ganancias": {
+    "name": "Income tax system",
+    "description": "Organize data and calculate income tax estimates."
+  },
+  "intermediacion-prestamos": {
+    "name": "Peer lending network",
+    "description": "Connect people seeking financing with potential lenders."
+  },
+  "margenes-tarjetas": {
+    "name": "Credit card available limits",
+    "description": "View available limits across several credit cards, subject to authorized integrations."
+  },
+  "host-to-host": {
+    "name": "Host to Host electronic banking system",
+    "description": "Host to Host integration for file exchange and automation of payments, collections and reconciliation with Red LINK and Banelco banks, subject to available interfaces."
+  },
+  "turnos-medicos": {
+    "name": "Medical appointments",
+    "description": "Manage professionals' schedules, availability, bookings and appointment reminders."
+  },
+  "historias-clinicas": {
+    "name": "Electronic health records",
+    "description": "Record and view patient history, consultations and progress with controlled access."
+  },
+  "trueque": {
+    "name": "Barter platform",
+    "description": "List goods and services and connect people who want to exchange them."
+  },
+  "donaciones": {
+    "name": "Donation platform",
+    "description": "Publish causes, receive contributions and track fundraising campaigns."
+  },
+  "daresdar": {
+    "name": "Daresdar",
+    "description": "Daresdar product concept: scope and features to be defined."
+  },
+  "givy": {
+    "name": "Givy.com.ar",
+    "description": "Givy.com.ar product concept: scope and features to be defined."
+  },
+  "alquiler-objetos": {
+    "name": "Object rental marketplace",
+    "description": "Publish, find and rent objects between individuals."
+  },
+  "firma-digital": {
+    "name": "Digital signature tool",
+    "description": "Prepare, sign and verify digital documents."
+  },
+  "visio": {
+    "name": "Diagram editor",
+    "description": "Create flowcharts, process diagrams and visual schematics online."
+  },
+  "visor-md": {
+    "name": "Markdown viewer",
+    "description": "View Markdown files with Mermaid diagram support."
+  },
+  "visor-sql": {
+    "name": "SQL file viewer",
+    "description": "Read and explore SQL files in a web interface."
+  },
+  "metadatos-imagen": {
+    "name": "Image metadata viewer",
+    "description": "View available metadata in an image file."
+  },
+  "deteccion-ia": {
+    "name": "AI image analysis",
+    "description": "Estimate whether an image may have been generated with AI, presenting the result as an indication rather than a certainty."
+  },
+  "buscador-apps": {
+    "name": "GitHub app finder",
+    "description": "Discover applications and projects published on GitHub."
+  },
+  "buscador-skills": {
+    "name": "AI skills finder",
+    "description": "Find and explore AI skills published on GitHub."
+  },
+  "truco": {
+    "name": "Truco card game",
+    "description": "Play an online version of the Truco card game."
+  },
+  "eventos-apuestas": {
+    "name": "Events and betting",
+    "description": "A concept for an events and betting platform, subject to applicable regulations."
+  },
+  "apps-whatsapp": {
+    "name": "WhatsApp web applications",
+    "description": "Web solutions that integrate conversations and customer service flows through WhatsApp."
+  },
+  "cursos-shopify": {
+    "name": "Online courses with Shopify",
+    "description": "Sell online courses through Shopify."
+  },
+  "buloneria": {
+    "name": "Hardware fastener management system",
+    "description": "Manage products, stock, sales and customers for a fastener store."
+  },
+  "repuestos": {
+    "name": "Spare parts management system",
+    "description": "Manage a spare parts catalog, inventory and sales."
+  },
+  "laboratorio": {
+    "name": "Laboratory management system",
+    "description": "Manage orders, samples, results and laboratory reports."
+  },
+  "inmobiliaria": {
+    "name": "Real estate management system",
+    "description": "Manage properties, clients, viewings and real estate transactions."
+  },
+  "obra-social-zenda": {
+    "name": "Zenda health insurance system",
+    "description": "A concept for managing members, benefits, authorizations and inquiries for Zenda health insurance."
+  },
+  "ingenio": {
+    "name": "Sugar mill management system",
+    "description": "Manage operations, production and reporting for a sugar mill."
+  },
+  "agro": {
+    "name": "Agriculture management system",
+    "description": "Manage agricultural activities, supplies and production tracking."
+  },
+  "petroleo": {
+    "name": "Oil industry management system",
+    "description": "Track operations, resources and reports for oil industry activities."
+  }
+};
+
 (() => {
   "use strict";
 
@@ -1703,6 +1986,49 @@ window.WSS = { CATEGORIES, SYSTEMS };
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+  let currentLang = "es";
+  const originalText = new WeakMap();
+  const originalAttributes = new WeakMap();
+  const translate = (value) => currentLang === "en" ? (EN_TEXT[value] || value) : value;
+  const systemText = (system, field) => currentLang === "en" ? (EN_SYSTEMS[system.id]?.[field] || system[field]) : system[field];
+
+  function translatePage() {
+    document.documentElement.lang = currentLang;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (!parent || parent.closest("script, style, #systemsGrid")) continue;
+      if (!originalText.has(node)) originalText.set(node, node.nodeValue);
+      const original = originalText.get(node);
+      const match = original.match(/^(\s*)([\s\S]*?)(\s*)$/);
+      const key = match[2].replace(/\s+/g, " ").trim();
+      node.nodeValue = match[1] + (currentLang === "en" ? (EN_TEXT[key] || match[2]) : match[2]) + match[3];
+    }
+    for (const element of document.querySelectorAll("[placeholder], [aria-label], meta[name='description'], meta[property='og:title'], meta[property='og:description']")) {
+      if (!originalAttributes.has(element)) originalAttributes.set(element, {});
+      const originals = originalAttributes.get(element);
+      for (const attr of ["placeholder", "aria-label", "content"]) {
+        if (!element.hasAttribute(attr)) continue;
+        if (!(attr in originals)) originals[attr] = element.getAttribute(attr);
+        element.setAttribute(attr, currentLang === "en" ? (EN_TEXT[originals[attr]] || originals[attr]) : originals[attr]);
+      }
+    }
+    document.title = currentLang === "en" ? "WSS Web | Web application and system ideas" : "WSS Web | Ideas de aplicaciones y sistemas a medida";
+    document.querySelectorAll("[data-lang]").forEach((button) => {
+      const active = button.dataset.lang === currentLang;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  document.querySelector(".language-switch")?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-lang]");
+    if (!button || button.dataset.lang === currentLang) return;
+    currentLang = button.dataset.lang;
+    translatePage();
+    renderSystems(document.querySelector(".filter.is-active")?.dataset.filter || "all");
+  });
 
   /* ---------- Header / nav ---------- */
   const header = $("#header");
@@ -1810,18 +2136,18 @@ window.WSS = { CATEGORIES, SYSTEMS };
     const cat = CATEGORIES[system.category];
     const isLive = Boolean(system.url) && system.status !== "soon";
     const badgeClass = isLive ? "is-live" : "is-soon";
-    const badgeText = statusLabel[system.status] || (isLive ? "En vivo" : "Próximamente");
+    const badgeText = translate(statusLabel[system.status] || (isLive ? "En vivo" : "Próximamente"));
     const tags = (system.tags || [])
       .slice(0, 3)
-      .map((t) => `<span>${escapeHTML(t)}</span>`)
+      .map((t) => `<span>${escapeHTML(translate(t))}</span>`)
       .join("");
 
     const link = isLive
       ? `<a class="system-card__link" href="${escapeAttr(system.url)}" target="_blank" rel="noopener noreferrer">
-           Abrir
+           ${translate("Abrir")}
            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
          </a>`
-      : `<a class="system-card__link" href="#contacto">Consultar idea</a>`;
+      : `<a class="system-card__link" href="#contacto">${translate("Consultar idea")}</a>`;
 
     return `
       <article class="system-card ${isLive ? "" : "is-idea"}" data-category="${escapeAttr(system.category)}">
@@ -1829,11 +2155,11 @@ window.WSS = { CATEGORIES, SYSTEMS };
           <div class="system-card__icon" aria-hidden="true">${system.icon || "◆"}</div>
           <span class="system-card__badge ${badgeClass}">${escapeHTML(badgeText)}</span>
         </div>
-        <h3>${escapeHTML(system.name)}</h3>
-        <p>${escapeHTML(system.description)}</p>
+        <h3>${escapeHTML(systemText(system, "name"))}</h3>
+        <p>${escapeHTML(systemText(system, "description"))}</p>
         <div class="system-card__footer">
           <div class="system-card__tags">
-            <span>${escapeHTML(cat?.label || system.category)}</span>
+            <span>${escapeHTML(translate(cat?.label || system.category))}</span>
             ${tags}
           </div>
           ${link}
@@ -1873,6 +2199,7 @@ window.WSS = { CATEGORIES, SYSTEMS };
 
   buildFilters();
   renderSystems("all");
+  translatePage();
 
   /* ---------- Contact form ---------- */
   const form = $("#contactForm");
@@ -1924,14 +2251,14 @@ window.WSS = { CATEGORIES, SYSTEMS };
     }
 
     if (!valid) {
-      formNote.textContent = "Revisá los campos marcados e intentá de nuevo.";
+      formNote.textContent = currentLang === "en" ? "Check the highlighted fields and try again." : "Revisá los campos marcados e intentá de nuevo.";
       formNote.classList.add("is-error");
       return;
     }
 
     submitBtn.disabled = true;
     const original = submitBtn.textContent;
-    submitBtn.textContent = "Enviando...";
+    submitBtn.textContent = currentLang === "en" ? "Sending..." : "Enviando...";
 
     try {
       // FormSubmit AJAX endpoint
@@ -1955,7 +2282,7 @@ window.WSS = { CATEGORIES, SYSTEMS };
       if (!res.ok) throw new Error("send_failed");
 
       form.reset();
-      formNote.textContent = "Mensaje enviado. Te respondo a la brevedad.";
+      formNote.textContent = currentLang === "en" ? "Message sent. I will reply soon." : "Mensaje enviado. Te respondo a la brevedad.";
       formNote.classList.add("is-success");
     } catch {
       // Fallback: mailto si el servicio falla o no está activado
@@ -1965,11 +2292,11 @@ window.WSS = { CATEGORIES, SYSTEMS };
       );
       window.location.href = `mailto:wssarg@gmail.com?subject=${subject}&body=${body}`;
       formNote.textContent =
-        "Abriendo tu cliente de correo como alternativa...";
+        currentLang === "en" ? "Opening your email client as an alternative..." : "Abriendo tu cliente de correo como alternativa...";
       formNote.classList.add("is-success");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = original;
+      submitBtn.textContent = currentLang === "en" ? "Send message" : "Enviar mensaje";
     }
   });
 })();

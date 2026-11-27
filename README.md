@@ -6,7 +6,7 @@ La página completa está en `index.html`: HTML, estilos, catálogo y comportami
 
 ## Catálogo
 
-Incluye 33 ideas en 9 rubros. Para editar una tarjeta, modificá el array `SYSTEMS` dentro del bloque `<script>` de `index.html`. Las categorías están en `CATEGORIES`. Cada idea usa `status: "idea"` y `url: null`; al publicar un producto, agregá su URL y cambiá el estado a `live` o `beta`.
+Incluye 34 ideas en 9 rubros. Para editar una tarjeta, modificá el array `SYSTEMS` dentro del bloque `<script>` de `index.html`. Las categorías están en `CATEGORIES`. Para la versión inglesa, agregá la ficha equivalente en `EN_SYSTEMS` y los textos de interfaz en `EN_TEXT`. El idioma inicial es español. Cada idea usa `status: "idea"` y `url: null`; al publicar un producto, agregá su URL y cambiá el estado a `live` o `beta`.
 
 ## Uso local
 
