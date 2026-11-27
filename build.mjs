@@ -6,6 +6,7 @@ const catalog = JSON.parse(fs.readFileSync(path.join(root, 'catalogo.json'), 'ut
 const source = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const categories = catalog.categories;
 const systems = catalog.systems;
+const quienSoyVisible = catalog.quiensoy_visible;
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -24,7 +25,17 @@ function replaceRegion(text, start, end, content) {
   assert(text.indexOf(start, from + 1) < 0, `Duplicate generated region: ${start}`);
   return text.slice(0, from + start.length) + '\n' + content + '\n' + text.slice(to);
 }
+function applyVisibility(text, name, visible) {
+  const start = `<!-- ${name}:start -->`;
+  const end = `<!-- ${name}:end -->`;
+  const from = text.indexOf(start);
+  const to = text.indexOf(end, from + start.length);
+  assert(from >= 0 && to > from, `Missing visibility region: ${name}`);
+  assert(text.indexOf(start, from + 1) < 0, `Duplicate visibility region: ${name}`);
+  return text.slice(0, from) + (visible ? text.slice(from + start.length, to) : '') + text.slice(to + end.length);
+}
 
+assert(typeof quienSoyVisible === 'boolean', 'quiensoy_visible must be true or false');
 assert(categories && typeof categories === 'object', 'categories must be an object');
 assert(Array.isArray(systems) && systems.length > 0, 'systems must be a nonempty array');
 const categoryIds = Object.keys(categories);
@@ -83,6 +94,9 @@ assert(textMatch, 'English interface translations not found');
 const interfaceText = JSON.parse(textMatch[1]);
 for (const labels of Object.values(categories)) interfaceText[labels.es] = labels.en;
 output = output.replace(textMatch[0], `const EN_TEXT = ${jsJSON(interfaceText)};\n// catalog-english:start`);
+for (const name of ['quiensoy-nav', 'quiensoy-section', 'quiensoy-footer']) {
+  output = applyVisibility(output, name, quienSoyVisible);
+}
 const target = path.join(root, 'dist');
 fs.mkdirSync(target, {recursive: true});
 fs.writeFileSync(path.join(target, 'index.html'), output, 'utf8');

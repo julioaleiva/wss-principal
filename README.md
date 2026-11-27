@@ -4,6 +4,8 @@ Sitio público: https://wss-principal.netlify.app/
 
 El catálogo se edita en **`catalogo.json`**. Para agregar, cambiar o quitar un sistema, modificá solo ese archivo y subí el cambio a la rama `master` de GitHub. Netlify ejecuta `node build.mjs` y publica `dist/index.html` automáticamente.
 
+Para mostrar u ocultar la sección «Quién soy», cambiá `quiensoy_visible` a `true` o `false` en el mismo JSON. Cuando está oculta, también desaparecen sus enlaces del menú y del pie de página.
+
 Cada ficha contiene:
 
 - `id`: identificador único, en minúsculas y con guiones.
