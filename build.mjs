@@ -100,5 +100,6 @@ for (const name of ['quiensoy-nav', 'quiensoy-section', 'quiensoy-footer']) {
 const target = path.join(root, 'dist');
 fs.mkdirSync(target, {recursive: true});
 fs.writeFileSync(path.join(target, 'index.html'), output, 'utf8');
+fs.copyFileSync(path.join(root, 'preview.png'), path.join(target, 'preview.png'));
 console.log(`Generated ${systems.length} systems in ${categoryIds.length} categories`);
 
