@@ -2,12 +2,8 @@
 
 Sitio público: https://wss-principal.netlify.app/
 
-La página completa está en `index.html`: HTML, estilos, catálogo y comportamiento JavaScript. No necesita archivos CSS ni JS externos.
+La página completa está en `index.html`: HTML, CSS y JavaScript integrados.
 
-## Catálogo
+El catálogo contiene 37 soluciones en 10 rubros. Los datos en español están en `SYSTEMS`, las traducciones de fichas en `EN_SYSTEMS` y los textos de interfaz en `EN_TEXT`. El idioma inicial es español. Las dos herramientas musicales enlazan a sus sitios; las demás fichas se presentan como propuestas.
 
-Incluye 34 ideas en 9 rubros. Para editar una tarjeta, modificá el array `SYSTEMS` dentro del bloque `<script>` de `index.html`. Las categorías están en `CATEGORIES`. Para la versión inglesa, agregá la ficha equivalente en `EN_SYSTEMS` y los textos de interfaz en `EN_TEXT`. El idioma inicial es español. Cada idea usa `status: "idea"` y `url: null`; al publicar un producto, agregá su URL y cambiá el estado a `live` o `beta`.
-
-## Uso local
-
-Abrí `index.html` directamente en el navegador. El formulario de contacto usa FormSubmit y, si falla, abre un correo de respaldo.
+Netlify usa Netlify Drop: para publicar cambios, subir `index.html` al proyecto `wss-principal` después de actualizar GitHub.
